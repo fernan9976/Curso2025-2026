@@ -64,13 +64,13 @@ g.add((hasColleague, RDFS.label, Literal("hasColleague", datatype=XSD.string)))
 # hasName
 g.add((hasName, RDF.type, RDF.Property))
 g.add((hasName, RDFS.domain, Person))
-g.add((hasName, RDFS.range, XSD.string))
+g.add((hasName, RDFS.range, RDFS.Literal))
 g.add((hasName, RDFS.label, Literal("hasName", datatype=XSD.string)))
 
 # hasHomePage
 g.add((hasHomePage, RDF.type, RDF.Property))
 g.add((hasHomePage, RDFS.domain, FullProfessor))
-g.add((hasHomePage, RDFS.range, XSD.string))
+g.add((hasHomePage, RDFS.range, RDFS.Literal))
 g.add((hasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
 
 # Validation
@@ -117,3 +117,4 @@ r.validate_task_06_04(g)
 # Save report
 # ----------------------------
 r.save_report("_Task_06")
+
