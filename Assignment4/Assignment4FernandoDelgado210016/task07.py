@@ -77,21 +77,22 @@ rep.validate_07_02a(individuos)
 # ==========================================================
 # TASK 7.2b - SPARQL
 # ==========================================================
-consulta_2b = prepareQuery("""
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX p: <http://oeg.fi.upm.es/def/people#>
 
-SELECT ?persona WHERE {
-  ?persona rdf:type ?tipo .
-  ?tipo rdfs:subClassOf* p:Person .
+from rdflib import Namespace
+
+PEOPLE = Namespace("http://oeg.fi.upm.es/def/people#")
+
+consulta_2b = """
+PREFIX people: <http://oeg.fi.upm.es/def/people#>
+
+SELECT ?ind
+WHERE {
+    ?ind a people:FullProfessor .
 }
-""")
-
-for r in rdf_graph.query(consulta_2b):
-    print(r.persona)
+"""
 
 rep.validate_07_02b(rdf_graph, consulta_2b)
+
 
 # ==========================================================
 # TASK 7.3 - SPARQL: quienes conocen a Rocky
