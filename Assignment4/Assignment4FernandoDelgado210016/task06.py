@@ -11,6 +11,7 @@ from rdflib import Graph, Namespace, Literal, XSD
 from rdflib.namespace import RDF, RDFS
 from validation import Report
 
+# Crear gráfico RDF
 g = Graph()
 g.namespace_manager.bind('ns', Namespace("http://somewhere#"), override=False)
 r = Report()
@@ -20,11 +21,11 @@ ns = Namespace("http://mydomain.org#")
 VCARD = Namespace("http://www.w3.org/2001/vcard-rdf/3.0/")
 FOAF = Namespace("http://xmlns.com/foaf/0.1/")
 
-# Task 6.0: Prefixes
+# Task 6.0: Prefijos
 g.namespace_manager.bind('ontology', Namespace("http://mydomain.org#"), override=False)
 g.namespace_manager.bind('person', Namespace("http://oeg.fi.upm.es/def/people#"), override=False)
 
-# Task 6.1: Classes taxonomy
+# Task 6.1: Clases y jerarquía
 Person = Namespace("http://oeg.fi.upm.es/def/people#").Person
 Professor = ns.Professor
 AssociateProfessor = ns.AssociateProfessor
@@ -37,15 +38,16 @@ for c in classes:
     g.add((c, RDF.type, RDFS.Class))
     g.add((c, RDFS.label, Literal(c.split("#")[-1], datatype=XSD.string)))
 
-# Hierarchy
+# Jerarquía
 g.add((Professor, RDFS.subClassOf, Person))
 g.add((AssociateProfessor, RDFS.subClassOf, Professor))
 g.add((InterimAssociateProfessor, RDFS.subClassOf, AssociateProfessor))
 g.add((FullProfessor, RDFS.subClassOf, Professor))
 
+# Validación de tarea 6.1
 r.validate_task_06_01(g)
 
-# Task 6.2: Properties
+# Task 6.2: Propiedades
 hasColleague = ns.hasColleague
 hasName = ns.hasName
 hasHomePage = ns.hasHomePage
@@ -67,7 +69,7 @@ g.add((hasHomePage, RDFS.label, Literal("hasHomePage", datatype=XSD.string)))
 
 r.validate_task_06_02(g)
 
-# Task 6.3: Individuals
+# Task 6.3: Individuos
 Oscar = Namespace("http://oeg.fi.upm.es/resource/person/").Oscar
 Asun = Namespace("http://oeg.fi.upm.es/resource/person/").Asun
 Raul = Namespace("http://oeg.fi.upm.es/resource/person/").Raul
@@ -88,12 +90,13 @@ g.add((Raul, hasColleague, Oscar))
 
 r.validate_task_06_03(g)
 
-# Task 6.4: Oscar VCARD/FOAF properties
+# Task 6.4: Propiedades VCARD/FOAF
 g.add((Oscar, VCARD.Given, Literal("Oscar", datatype=XSD.string)))
 g.add((Oscar, VCARD.Family, Literal("Lastname", datatype=XSD.string)))
 g.add((Oscar, FOAF.email, Literal("oscar@email.com", datatype=XSD.string)))
 
 r.validate_task_06_04(g)
 
-# Save report
-r.save_report("_Task_06")
+# Guardar reporte **con el nombre exacto que GitHub Actions espera**
+r.save_report("report_result_Task_06.txt")
+
