@@ -115,31 +115,18 @@ from rdflib.namespace import RDF, RDFS
 p = Namespace("http://oeg.fi.upm.es/def/people#")
 
 query = prepareQuery('''
-SELECT DISTINCT ?name ?type WHERE {
-  # Relación "knows" en cualquier dirección con Rocky
-  { ?ind p:knows p:Rocky . }
-  UNION
-  { p:Rocky p:knows ?ind . }
-
-  # Tipo del individuo
+SELECT ?name ?type WHERE {
+  ?ind p:knows p:Rocky .   # quienes conocen a Rocky (solo esta dirección)
   ?ind rdf:type ?type .
-
-  # Nombre: hasName o, en su defecto, rdfs:label
-  OPTIONAL { ?ind p:hasName ?n . }
-  OPTIONAL { ?ind rdfs:label ?l . }
-  BIND (COALESCE(?n, ?l) AS ?name)
-
-  # Por si acaso, no incluir a Rocky si apareciera
-  FILTER(?ind != p:Rocky)
+  ?ind rdfs:label ?name .  # nombre por la etiqueta
 }
 ''', initNs={"p": p, "rdf": RDF, "rdfs": RDFS})
 
-# Visualización
 for r in g.query(query):
     print(r.name, r.type)
 
-# Validación
 report.validate_07_03(g, query)
+
 
 # ----------------------------
 # TASK 7.4: List the name of those entities who have a colleague or a colleague-of-colleague
