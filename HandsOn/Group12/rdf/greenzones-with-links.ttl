@@ -1,6 +1,23 @@
 @prefix gz:    <http://linkeddata.greenzonesmadrid.org/ontology/gz#> .
 @prefix owl:   <http://www.w3.org/2002/07/owl#> .
 @prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix cc:    <http://creativecommons.org/ns#> .
+
+########## Dataset Metadata ##########
+
+<http://linkeddata.greenzonesmadrid.org/dataset/greenzones> a dct:Dataset ;
+    dct:title "Linked Data de Zonas Verdes de Madrid"@es ;
+    dct:title "Linked Data of Green Zones in Madrid"@en ;
+    dct:description "Dataset RDF de zonas verdes (parques y jardines) del municipio de Madrid"@es ;
+    dct:description "RDF dataset of green zones (parks and gardens) in the municipality of Madrid"@en ;
+    dct:source <https://datos.madrid.es/> ;
+    dct:license <https://creativecommons.org/licenses/by/4.0/> ;
+    cc:attributionName "Ayuntamiento de Madrid - Transformado a RDF por Group12 - Curso 2025-2026" ;
+    dct:created "2025"^^xsd:gYear .
+
+########## Green Zones Instances ##########
 
 <http://linkeddata.greenzonesmadrid.org/resource/zone/1> a gz:GreenZone ;
   gz:district "CENTRO" ;
@@ -112,7 +129,1561 @@
   gz:plot "1374.79 m2" ;
   gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
 
-# Recurso del distrito CENTRO
+<http://linkeddata.greenzonesmadrid.org/resource/zone/11> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300010" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "RONDA DE SEGOVIA NUM 9" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "654.66 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/12> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300011" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PLAZA DE GABRIEL MIRO" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. EN SU INTERIOR SE ENCUENTRA LA PISTA DEPORTIVA\"GABRIEL MIRÓ\" (TAMBIÉN DENOMINADA \"LAS VISTILLAS\"), SITUADA EN LA C/ GABRIEL MIRÓ C/V C/ BEATRIZGALINDO C/V C/ MORERÍA." ;
+  gz:plot "12346.82 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/13> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300012" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CUESTA DE LOS CIEGOS" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "77.08 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/14> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300013" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE BEATRIZ GALINDO NUM 3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "496.08 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/15> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300014" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CUESTA DE LOS CIEGOS NUM 3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "776.35 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/16> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300015" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CUESTA DE LOS CIEGOS NUM 5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "539.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/17> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300016" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CUESTA DE JAVALQUINTO NUM 5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "745.85 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/18> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300017" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CUESTA DE JAVALQUINTO NUM 7" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "451.49 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/19> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300018" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LA MORERIA NUM 12" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1099.58 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/20> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300019" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LA MORERIA NUM 22" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "939.95 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/21> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300020" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CUESTA DE LOS CIEGOS C/V C/ DE BEATRIZ GALINDO" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "471.75 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/22> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300021" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE BARCELÓ" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. EN SU SUBSUELO SE CONSTRUYERON UNOSEVACUATORIOS." ;
+  gz:plot "13461.43 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/23> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300027" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE FUENCARRAL NUM 43" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "710.40 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/24> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300022" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LA ALAMEDA NUM 12" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. CUBIERTA P.A.R." ;
+  gz:plot "463.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/25> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300023" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "RONDA SEGOVIA NUM 57" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. FORMA PARTE DEL JARDÍN CATALOGADO \"JARDÍN EN C/ALGECIRAS\", CON PROTECCIÓN NIVEL 3." ;
+  gz:plot "2120.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/26> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300024" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "RONDA SEGOVIA NUM 9" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "704.65 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/27> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300025" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE JERTE NUM 3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "395.35 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/28> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300026" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL MESÓN DE PAREDES NUM 63" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONA VERDE BÁSICO." ;
+  gz:plot "1128.38 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/29> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300028" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ALGECIRAS NUM 8" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. SOLAR QUE HA PASADO A ZONA VERDE. BAJA FINCA Nº73 DEL INVENTARIO DEL AYUNTAMIENTO DE MADRID." ;
+  gz:plot "372.30 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/30> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300029" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ALGECIRAS NUM 4-6" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "920.50 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/31> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300030" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL ROSARIO C/V C/ DE JERTE" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. EN EL INTERIOR DE SU PERÍMETRO SE ENCUENTRAUBICADA LA PISTA DEPORTIVA PARQUE DE LA CORNISA (PISTA DE BALONCESTO, PISTA DE VÓLEY Y FUTBOLEY,PISTA DE BÁDMIN TON Y TENIS DE MESA), SITA EN CALLE DEL ROSARIO, NÚMERO 5." ;
+  gz:plot "14193.99 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/32> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301048" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "AVENIDA DE LA GRAN VIA DE SAN FRANCISCO NUM 19-21" ;
+  gz:destination "DOTACIONAL SERVICIO COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "3385.55 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/33> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301077" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL CASINO NUM 3 Y 5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. (LA ZONA NORTE ESTÁ CALIFICADA DE VÍA PÚBLICASEGÚN PGOUM 97)." ;
+  gz:plot "3098.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/34> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301216" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE EMBAJADORES NUM 66 B" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. EN EL INTERIOR DE SU PERÍMETRO SE ENCUENTRAINCLUIDA LA INSTALACIÓN DEPORTIVA BÁSICA PARQUE CASINO DE LA REINA (PISTA POLIDEPORTIVA Y PISTA DEBALONCESTO), SITA EN C/ EMBAJADORES, 66 C/V C/ CASINO, 3, ASÍ COMO UN QUIOSCO DE BEBIDAS." ;
+  gz:plot "7343.75 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/35> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301253" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL SOMBRERETE NUM 15" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. PARCELA NO DADA DE ALTA EN PMS; PARCELAREGULARIZADA POR LA LA DIRECTORA GENERAL DE PATRIMONIO POR CERTIFICACIÓN DE 23 DE MARZO DE 2018,AGRUPACIÓN Y SEGREGACIÓN DE FINCAS." ;
+  gz:plot "207.21 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/36> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301255" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PLAZA DEL GENERAL VARA DEL REY" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2379.34 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/37> a gz:GreenZone ;
+  gz:district "CENTRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301490" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LAVAPIÉS NUM 19" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES." ;
+  gz:plot "518.29 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/38> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300032" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DE LAS YESERIAS" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR. DENTRO DE SU PERIMETRO, PROXIMO AL PASEO DEYESERIAS, SE ENCUENTRA UBICADO UN EVACUATORIO, DOS CASETAS DE JARDINEROS, UN CAMPO DE FÚTBOL Y UNLOCAL DE MOTORES PARA LA ELEVACIÓN DEL AGUA DE LA FUENTE." ;
+  gz:plot "108873.35 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/39> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300034" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL CONCEJAL BENITO MARTÍN LOZANO NUM 9" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. DENTRO DE SU PERÍMETRO SE ENCUENTRA UBICADA UNACASETA DE PERSONAL Y ALMACÉN DE HERRAMIENTAS." ;
+  gz:plot "9141.50 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/40> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300035" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE SAN ISIDORO DE SEVILLA NUM 15 B" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "3013.50 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/41> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300036" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DE LAS YESERIAS NUM 43-49" ;
+  gz:destination "PARCELA COMPUESTA DE TRES FINCAS REGISTRALES. LA 35.219 Y LA 35.225 ESTÁN CALIFICADAS COMO DOTACIONALSERVICIOS COLECTIVOS ZONAS VERDES. LA FINCA REGISTRAL 35.227,CON SUPERFICIE DE 299 METROS CUADRADOS,Nº DE INVENTARIO PMS 3.811 ESTÁ CALIFICADA COMO DOTACIONAL SERVICIOS COLECTIVOS EQUIPAMIENTO BÁSICO;SU DESTINO ACTUAL ES UN PARQUE DE COLUMPIOS." ;
+  gz:plot "776.20 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/42> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300037" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE CARMEN COBEÑA NUM 5 B" ;
+  gz:destination "PARCELA NO INVENTARIADA EN PMS, CUYO PERÍMETRO ESTÁ INCLUIDO EN ALINEACIÓN DE VOLUMETRÍA ESPECÍFICA,NORMA ZONA 3.2, SEGÚN PGOUM 97." ;
+  gz:plot "176.55 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/43> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300039" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE EROS NUM 6" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. DENTRO DE SU PERÍMETRO SE HALLA UBICADA LA IDBEROS (PISTA DE FÚTBOL SALA)." ;
+  gz:plot "6731.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/44> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300064" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE VILLOSLADA NUM 5-11" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. PROTECCIÓN ARQUEOLÓGICA (ZPA TERRAZAS DELMANZANARES - NIVEL B)." ;
+  gz:plot "2951.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/45> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300066" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL PUERTO DE BÉJAR C/V C/ DE EMBAJADORES" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1880.81 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/46> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300068" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "TRAVESIA DE LOS MELANCÓLICOS" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2916.41 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/47> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300069" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LA ANTRACITA NUM 5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "828.40 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/48> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300070" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL RODIO C/V C/ DEL PLOMO" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1072.60 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/49> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300071" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE TITÁN NUM 12" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "4544.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/50> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300072" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL PLANETA TIERRA NUM 1" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1890.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/51> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300073" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE TITÁN NUM 11-15" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "10647.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/52> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300074" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL RODIO C/V C/ DE EMBAJADORES NUM 181" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "6992.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/53> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300075" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL RODIO NUM 6" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1520.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/54> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300076" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LA ANTRACITA NUM 3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2131.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/55> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300077" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL RODIO C/V C/ DEL HIERRO" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO; UNA PEQUEÑA PARTE DE LA PARCELA CORRESPONDE ASUELO DOTACIONAL DE EQUIPAMIENTOS." ;
+  gz:plot "1260.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/56> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300078" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE AMALTEA NUM 13" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "835.79 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/57> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300079" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE AMALTEA NUM 11" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "529.94 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/58> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300080" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE AMALTEA NUM 5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. PARTE ES VÍA PÚBLICA EN EL PGOUM-97." ;
+  gz:plot "1571.10 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/59> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300081" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE AMALTEA NUM 2" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1948.51 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/60> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300082" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL HIERRO NUM 6" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1998.15 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/61> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300083" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL HIERRO NUM 8-16" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2201.85 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/62> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300084" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE VALDEMORILLO NUM 3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "650.62 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/63> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300085" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL TENIENTE CORONEL NOREÑA NUM 67" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1894.05 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/64> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300086" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PLAZA DE CASAR DE CÁCERES" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES. EN EL INTERIOR DE SU PERÍMETRO SE ENCUENTRA UBICADA LAINSTALACIÓN DEPORTIVA BÁSICA DENOMINADA JUAN DE VERA (PISTA DE BALONCESTO)." ;
+  gz:plot "2550.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/65> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300062" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LEONOR DE LA VEGA NUM 1-11" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1022.14 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/66> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300063" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL ORIANA NUM 10" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "4139.65 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/67> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300040" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE TOLEDO NUM 177" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO, CON PROTECCIÓN NIVEL 3." ;
+  gz:plot "3267.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/68> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300041" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE RICARDO DAMAS NUM 1" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "4385.08 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/69> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300042" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE MAZARREDO NUM 7" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1200.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/70> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300043" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL TENIENTE CORONEL NOREÑA NUM 26 B" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1625.76 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/71> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300044" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL GENERAL LACY, NUM. 23 C/V C/ BUSTAMANTE" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1350.26 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/72> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300045" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ARGANDA NUM 5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "5336.95 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/73> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300046" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL CINZ NUM 1-3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1350.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/74> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300047" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LA CIRCONITA NUM 1-3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1350.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/75> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300048" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE EMBAJADORES NUM 173" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "4547.27 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/76> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300049" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE MELILLA NUM 9" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "864.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/77> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300050" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE GRANITO, FRENTE AL NUM 32-36" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1092.34 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/78> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300051" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ARGANDA NUM 1" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "7637.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/79> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300052" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE MELILLA NUM 57-65" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1305.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/80> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300053" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE MELILLA NUM 37-47" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1350.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/81> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300054" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE TOLEDO NUM 151" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "443.43 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/82> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300055" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE TOLEDO NUM 155" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "3154.88 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/83> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300056" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "TRAVESIA DE SAN ISIDORO DE SEVILLA NUM 7" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2390.54 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/84> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300057" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE BOLÍVAR NUM 18B-D" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1077.20 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/85> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300058" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE TOMÁS BRETÓN NUM 58" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2099.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/86> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300059" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE BOLÍVAR NUM 24B-E" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2061.82 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/87> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300060" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL PLOMO NUM 5A" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "873.28 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/88> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300038" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE TOLEDO NUM 178" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "3033.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/89> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301046" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL CRISTO DEL CAMINO NUM 5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR." ;
+  gz:plot "10608.66 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/90> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301047" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL PÁRROCO EUSEBIO CUENCA NUM 13" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR." ;
+  gz:plot "36633.96 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/91> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301049" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ALEJANDRO SAINT AUBIN NUM 2 B" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "443.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/92> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301050" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "GLORIETA DE SAN VÍCTOR" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1312.35 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/93> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301112" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE GARGANTILLA NUM 2" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. PARQUE URBANO. EN EL INTERIOR DE SU PERÍMETRO SEENCUENTRAN UBICADAS UNA CASETA DE PERSONAL Y UN ALMACÉN DE HERRAMIENTAS." ;
+  gz:plot "28239.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/94> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301202" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE PALOS DE LA FRONTERA NUM 42" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2990.56 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/95> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301203" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DE LAS YESERÍAS NUM 35 B" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "9150.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/96> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301204" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE MORATINES NUM 27" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "3363.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/97> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301205" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE VILLA DEL PRADO NUM 2-4" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1799.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/98> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301206" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DE LAS ACACIAS NUM 31" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. EN EL INTERIOR DE SU PERÍMETRO SE ENCUENTRAUBICADA LA INSTALACIÓN DEPORTIVA BÁSICA DOCTOR VALLEJO NÁJERA (PISTA DE BALONCESTO), SITA EN LA CALLEGASÓMETRO, NÚM. 32." ;
+  gz:plot "7664.63 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/99> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301207" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE RAMÍREZ DE PRADO NUM 2" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. EN EL INTERIOR DE SU PERÍMETRO SE ENCUENTRAUBICADA LA INSTALACIÓN DEPORTIVA BÁSICA RAMIREZ DE PRADO, C/ RAMÍREZ DE PRADO, 2 (PISTA DEBALONCESTO. PISTA DE PATINAJE)." ;
+  gz:plot "11098.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/100> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301208" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DEL MOLINO NUM 2" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2833.23 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/101> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301209" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ALEJANDRO SAINT AUBIN NUM 8" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1060.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/102> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301217" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE CARABAÑA NUM 7" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "188.61 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/103> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301218" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE CARABAÑA NUM 1-5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "260.99 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/104> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301219" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE MÉNDEZ ÁLVARO NUM 44-54" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2721.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/105> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301259" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE EMBAJADORES NUM 316-E" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR. EN EL INTERIOR DE SU PERÍMETRO SE ENCUENTRAUBICADO EL NUEVO EMPLAZAMIENTO DEL EDIFICIO MADRID RÍO EJECUTADO EN EL ÁMBITO DEL CONTRATO DE OBRASDE CONSTRUCCIÓN DE AMPLIACIÓN DE LA LÍNEA 11 DEL METRO DE MADRID, TRAMO PLAZA ELÍPTICA-CONDE DECASAL, COMO CONSTA EN EL ACTA DE ENTREGA Y PUESTA EN SERVICIO A FAVOR DEL AYUNTAMIENTO DE MADRID DEFECHA 14/06/2024." ;
+  gz:plot "9848.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/106> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301262" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DE LAS YESERÍAS NUM 10" ;
+  gz:destination "" ;
+  gz:plot "8791.48 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/107> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301263" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DE LA CHOPERA NUM 10 A" ;
+  gz:destination "EN EL INTERIOR DE SU PERÍMETRO SE UBICAN UNA CASETA DE JARDINEROS, OTRA DESTINADA A CENTRO DEINTERPRETACIÓN DE MADRID-RÍO Y OTRO EN SUBSUELO PARA ALMACENES." ;
+  gz:plot "62393.43 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/108> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301422" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO IMPERIAL NUM 32" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO ZONA VERDE DE BARRIO." ;
+  gz:plot "4196.59 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/109> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301423" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE CASIMIRO MAHOU BIERHANS NUM 2" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO ZONA VERDE DE BARRIO." ;
+  gz:plot "5064.89 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/110> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301424" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ALEJANDRO DUMAS NUM 34" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO ZONA VERDE DE BARRIO." ;
+  gz:plot "2873.43 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/111> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301425" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE CASIMIRO MAHOU BIERHANS NUM 17" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO ZONA VERDE DE BARRIO." ;
+  gz:plot "1808.47 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/112> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301426" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE CASIMIRO MAHOU BIERHANS NUM 5" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO ZONA VERDE DE BARRIO." ;
+  gz:plot "741.87 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/113> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301427" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DE LA VIRGEN DEL PUERTO NUM 67" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO PARQUE DE DISTRITO." ;
+  gz:plot "24931.87 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/114> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301434" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ALPEDRETE NUM 20" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES." ;
+  gz:plot "615.62 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/115> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301435" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LEGANÉS NUM 1" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES." ;
+  gz:plot "2106.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/116> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301436" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ALAMEDILLA NUM 14" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES." ;
+  gz:plot "1525.95 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/117> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301437" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE MÉNDEZ ÁLVARO NUM 63" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES." ;
+  gz:plot "3019.77 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/118> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301439" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LEGANÉS NUM 6" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES." ;
+  gz:plot "1459.89 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/119> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301460" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE EMBAJADORES NUM 316 C" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR PARQUE URBANO. DENTRO DE SU PERÍMETRO SEENCUENTRA PARTE DE LA IDB COMPUESTA POR UN CIRCUITO DE BMX AL AIRE LIBRE, DELIMITADO MEDIANTEVALLADO, CON ACCESO DESDE EL PARQUE. EN SU INTERIOR CUENTA CON UNA CONSTRUCCIÓN EN LA ZONA DE ACCESO.LAS GRADAS SE ENCUENTRAN FUERA DE LA DELIMITACIÓN DEL VALLADO. POR DECRETO DE FECHA 29 DE ABRIL DE2010 DEL VICEALCALDE, POR SUSTITUCIÓN DEL DELEGADO DEL ÁREA DE HACIENDA Y ADMINISTRACIÓN PÚBLICA, SEADSCRIBIÓ ESTA IDB AL DISTRITO; EL PUNTO DE VENTA ADSCRITO A LA INSTALACIÓN DEPORTIVA (ZONA B), SEADSCRIBIÓ AL DISTRITO, POR DECRETO DE FECHA 15 DE DICIEMBRE DE 2010 DEL DELEGADO DEL ÁREA DE HACIENDAY ADMINISTRACIÓN PÚBLICA. POR DECRETO DE 24 DE MAYO DE 2022 DE LA DELEGADA DEL ÁREA DE GOBIERNO DEOBRAS Y EQUIPAMIENTOS HA DISPUESTO MODIFICAR EL DECRETO DE ADSCRIPIÓN ANTERIOR EN EL SENTIDO DEMODIFICAR EL ÓRGANO ADMINISTRATIVO AL QUE SE ADSCRIBE EL BIEN, PASANDO DEL DISTRITO DE ARGANZUELA ALÁREA DE GOBIERNO DE CULTURA, TURISMO Y DEPORTE, ÁREA DELEGADA DE DEPORTE. EN EL INTERIOR DE SUPERÍMETRO SE ENCUENTRA TAMBIÉN UBICADA UNA PARTE DEL CERRAMIENTO EXTERIOR DEL NUEVO EDIFICIOMADRID-RÍO." ;
+  gz:plot "10332.58 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/120> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301461" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE EMBAJADORES NUM 316 C" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. DENTRO DE SU PERÍMETRO SE ENCUENTRA PARTE DE LAIDB COMPUESTA POR UN CIRCUITO DE BMX AL AIRE LIBRE, DELIMITADO MEDIANTE VALLADO, CON ACCESO DESDE ELPARQUE. EN SU INTERIOR CUENTA CON UNA CONSTRUCCIÓN EN LA ZONA DE ACCESO. LAS GRADAS SE ENCUENTRANFUERA DE LA DELIMITACIÓN DEL VALLADO. POR DECRETO DE FECHA 29 DE ABRIL DE 2010 DEL VICEALCALDE, PORSUSTITUCIÓN DEL DELEGADO DEL ÁREA DE HACIENDA Y ADMINISTRACIÓN PÚBLICA, SE ADSCRIBIÓ ESTA IDB ALDISTRITO; EL PUNTO DE VENTA ADSCRITO A LA INSTALACIÓN DEPORTIVA (ZONA B), SE ADSCRIBIÓ AL DISTRITO,POR DECRETO DE FECHA 15 DE DICIEMBRE DE 2010 DEL DELEGADO DEL ÁREA DE HACIENDA Y ADMINISTRACIÓNPÚBLICA. POR DECRETO DE 24 DE MAYO DE 2022 DE LA DELEGADA DEL ÁREA DE GOBIERNO DE OBRAS YEQUIPAMIENTOS HA DISPUESTO MODIFICAR EL DECRETO DE ADSCRIPIÓN ANTERIOR EN EL SENTIDO DE MODIFICAR ELÓRGANO ADMINISTRATIVO AL QUE SE ADSCRIBE EL BIEN, PASANDO DEL DISTRITO DE ARGANZUELA AL ÁREA DEGOBIERNO DE CULTURA, TURISMO Y DEPORTE, ÁREA DELEGADA DE DEPORTE." ;
+  gz:plot "15280.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/121> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301541" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO DE LOS MELANCÓLICOS NUM 34" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR PARQUE URBANO." ;
+  gz:plot "3605.03 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/122> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301542" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO VIRGEN DEL PUERTO NUM 67D" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR PARQUE URBANO. SE TRATA DE UNA PARCELA CON USOCUALIFICADO SUPERPUESTO DESTINADO A DOTACIONAL ZONAS VERDES PARQUE URBANO SINGULAR (ZV.10) EN SUPARTE SUPERIOR Y A DOTACIONAL VÍA PÚBLICA PRINCIPAL METROPOLITANA (VP.19) EN SU PARTE INFERIOR QUE SECORRESPONDE CON LA AUTOPISTA DE CIRCUNVALACIÓN M30." ;
+  gz:plot "16821.89 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/123> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301543" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO VIRGEN DEL PUERTO NUM 67B" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR PARQUE URBANO. SE TRATA DE UNA PARCELA CON USOCUALIFICADO SUPERPUESTO DESTINADO A DOTACIONAL ZONAS VERDES PARQUE URBANO SINGULAR (ZV.10) EN SUPARTE SUPERIOR Y A DOTACIONAL VÍA PÚBLICA PRINCIPAL METROPOLITANA (VP.19) EN SU PARTE INFERIOR QUE SECORRESPONDE CON LA AUTOPISTA DE CIRCUNVALACIÓN M30.\"" ;
+  gz:plot "2194.99 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/124> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301544" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO VIRGEN DEL PUERTO NUM 67E" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR PARQUE URBANO." ;
+  gz:plot "978.46 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/125> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301545" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO VIRGEN DEL PUERTO NUM 67C" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR PARQUE URBANO. SE TRATA DE UNA PARCELA CON USOCUALIFICADO SUPERPUESTO DESTINADO A DOTACIONAL VÍA PÚBLICA PRINCIPAL URBANA (VP.03B) EN SU NIVELSUPERIOR Y DOTACIONAL ZONAS VERDES PARQUE URBANO SINGULAR (ZV.12) EN SU NIVEL INFERIOR." ;
+  gz:plot "490.18 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/126> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301546" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO VIRGEN DEL PUERTO NUM 67A" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR PARQUE URBANO." ;
+  gz:plot "1116.19 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/127> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301547" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PASEO SAN EPIFANIO NUM 11" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR PARQUE URBANO." ;
+  gz:plot "1271.62 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/128> a gz:GreenZone ;
+  gz:district "ARGANZUELA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301540" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE SAN EPIFANIO NUM 9" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONA VERDE BÁSICO ZONA VERDE DE BARRIO. BAJO ESTA PARCELA RESULTANTESE ENCUENTRA CONSTRUIDO EL APARCAMIENTO PÚBLICO MUNICIPAL SAN EPIFANIO." ;
+  gz:plot "7495.49 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/129> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300087" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PLAZA DE LA INDEPENDENCIA NUM 7" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR. DENTRO DE SU PERIMETRO SE HALLAN CONSTRUIDOS:DOS PABELLONES, DENOMINADOS: PALACIO DE CRISTAL Y PALACIO DE VELAZQUEZ, QUE SE DETENTAN SIN TITULOPOR EL ESTADO; UN TEMPLETE DE MUSICA EN LA PLAZA MAESTRO VILLA; UN QUIOSCO DESTINADO A TEATRO DETÍTERES, EN LA PLAZA DE LOS TITERES; CINCO NAVES DESTINADAS A TALLERES DE MOBILIARIO URBANO, EN ELPASEO DE FERNAN NUÑEZ Y UN CANTON DE LIMPIEZAS CON ENTRADA POR EL HUERTO DEL FRANCES. ASIMISMO,EXISTEN SIETE EVACUATORIOS SITUADOS EN: FUENTE DE LA ALCACHOFA, PLAZA DEL ANGEL CAIDO, PASEO DE LASESTATUAS, PASEO DE FERNAN NUÑEZ, PLAZA DEL MAESTRO VILLA, PASEO DE LA CHOPERA DEL RETIRO Y MONTAÑA DELOS GATOS. DENTRO DEL PERIMETRO DEL PARQUE SE ENCUENTRAN IGUALMENTE UBICADOS EL AUDITORIO \"TEMPLETEDE MUSICA\"; UNA GUARDERIA-ESCUELA INFANTIL (JUNTO A POETA ESTEBAN VILLEGAS); EL CENTRO MUNICIPAL DEMAYORES \"CABAÑA PARQUE RETIRO\"; LA SALA DE EXPOSICIONES \"MONTAÑA ARTIFICIAL\"; 7 CASETAS DE JARDINERO;UNA ESTACION METEOROLOGICA; EL INVERNADERO DE CULTIVO \"VIVERO ESTUFAS\"; OFICINAS, TALLER Y ALMACEN;UNA CABAÑA DE ALQUILER DE BICICLETAS; UNA CABAÑA ALMACEN PARA MANTENIMIENTO DE FAUNA; NORIAS I Y II;UNA CONSTRUCCIÓN PREFABRICADA \"CASITA PESCADOR\"; 10 CASETAS DE GUARDA, UN CANTON LIMPIEZAS, TALLERESDE MOBILIARIO URBANO EN LA HUERTA DEL FRANCES, ESTANQUE DEL RETIRO, INSTALACION DEPORTIVA MUNICIPAL\"LA CHOPERA\" (SALA DE MUSCULACIÓN, SALA MULTIUSOS, 3 PISTAS POLIDEPORTIVAS, 3 PISTAS DE PÁDEL, 3PISTAS DE TENIS, CAMPO DE FÚTBOL 11 DE CÉSPED ARTIFICIAL Y CIRCUITO DE VIDA); DEPURADORA E INMUEBLEDEDICADO EN PARTE A VESTUARIO DE LA DG PATRIMONIO VERDE Y EN PARTE A UN CENTRO DE EDUCACIÓN EINFORMACIÓN AMBIENTAL, DENOMINADO \"EL HUERTO DEL RETIRO\", DEPENDIENTE DE LA DG DE ÁREAS URBANAS,COORDINACIÓN Y EDUCACIÓN AMBIENTAL (ÁREA DE GOBIERNO DE MEDIO AMBIENTE, SEGURIDAD Y MOVILIDAD), Y ELEDIFICIO DE LAS CABALLERIZAS, EN LA ZONA DE VIVEROS EN EL PASEO DE FERNÁN NÚÑEZ, QUE POR DECRETO DELA DELEGADA DEL ÁREA DE GOBIERNO DE OBRAS Y EQUIPAMIENTOS, DE 20/12/2024, SE DESADSCRIBE DEL ÁREA DEGOBIERNO DE VICEALCALDÍA, PORTAVOZ, SEGURIDAD Y EMERGENCIAS Y SE ADSCRIBE AL ÁREA DE GOBIERNO DEURBANISMO, MEDIO AMBIENTE Y MOVILIDAD CON DESTINO A VIVERO DE ESTUFAS DEL RETIRO ;UN REFUGIOANTIAÉREO SITUADO EN LA ZONA ESTE DEL PARQUE BAJO EL SECTOR FORMADO POR LA AVENIDA MENÉNDEZ PELAYO YLA PUERTA DE LA REINA MERCEDES (AL ESTE), EL PASEO DE LA REPÚBLICA DOMINICANA (AL SUR), EL PASEO DESALVADOR TRAIL Y PUERTA DE AMÉRICA (AL NORTE) Y EL EDIFICIO DE FLORIDA PARK (AL OESTE). SE ENCUENTRAOTORGADA CONCESION Nº 12.096, SOBRE LAS INSTALACIONES DE LA DENOMINADA CASA DEL CONTRABANDISTA PARALA EXPLOTACION DEL SERVICIO DE RESTAURANTE Y SALA DE FIESTAS \"FLORIDA PARK\"." ;
+  gz:plot "1181753.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/130> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300088" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ALFONSO XII NUM 9" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "2859.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/131> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300089" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE JUAN ESPLANDIU NUM 4 B" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. ANTES DENOMINADO PARQUE CASA BLANCA. DENTRO DESU PERÍMETRO SE ENCUENTRA UBICADA UNA CASETA DE PERSONAL, ALMACÉN DE HERRAMIENTAS Y MAQUINARIA Y LAIN STALACIÓN DEPORTIVA BÁSICA PARQUE DE ROMA I (PISTA DE FÚTBOL SALA Y PISTA POLIDEPORTIVA), SITUADAEN LA CALLE JUAN ESPLANDIU Nº 4-B Y LA INSTALACIÓN DEPORTIVA BÁSICA PARQUE DE ROMA III (ROCÓDROMO),SITUADA EN LA CALLE ALCALDE SAINZ DE BARANDA, 90." ;
+  gz:plot "183270.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/132> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300090" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PLAZA DE MURILLO" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR. DECLARADOS DE INTERES GENERAL EN LA CATEGORIADE MONUMENTO." ;
+  gz:plot "17500.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/133> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300091" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PLAZA DE LA LEALTAD" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. JARDINES DECLARADOS BIEN DE INTERES GENERAL ENLA CATEGORIA DE MONUMENTO." ;
+  gz:plot "8000.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/134> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300096" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ANTONIO NEBRIJA NUM 9" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "4724.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/135> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300100" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE JOSÉ ANSELMO CLAVÉ NUM 1" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "145.50 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/136> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300092" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LUIS MITJANS NUM 52 A" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "980.22 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/137> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300093" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LAS COCHERAS NUM 1-3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. DENTRO DE SU PERÍMETRO SE ENCUENTRA UBICADA LAINSTALACIÓN DEPORTIVA BÁSICA COCHERAS (PISTA DE FÚTBOL, PISTA DE BALONCESTO, PISTA DE PATINAJE, ZONADE PARKOUR -BAJO EL PUENTE DE DOCTOR ESQUERDO), SITUADA EN LA CALLE COCHERAS, 1 Y 3." ;
+  gz:plot "8229.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/138> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300094" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE CATALINA SUÁREZ NUM 3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "215.32 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/139> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300095" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE JÁTIVA NUM 3" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1689.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/140> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300097" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "PLAZA DE MARIANO DE CAVIA" ;
+  gz:destination "NO FIGURA COMO ZONA VERDE EN EL PGOUM97, AUNQUE SI EN EL REGISTRO." ;
+  gz:plot "654.50 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/141> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300099" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE LUIS PEIDRÓ NUM 6" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. EN EL INTERIOR DE SU PERÍMETRO SE ENCUENTRA UNCANTÓN DE LIMPIEZA." ;
+  gz:plot "4104.13 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/142> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300105" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "AVENIDA DE LA CIUDAD DE BARCELONA NUM 184" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. BAJA FINCA Nº 182 DEL INVENTARIO DELAYUNTAMIENTO DE MADRID." ;
+  gz:plot "2372.71 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/143> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300106" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DEL PEZ VOLADOR NUM 21" ;
+  gz:destination "LA PARCELA SE ENCUENTRA EN PARTE DESTINADA A ZONA VERDE, EN PATE A VIARIO Y EN PARTE ZONA DEPORTIVA,SIENDO LA PARTE DESTINADA A ZONA VERDE UNA PORCIÓN DE LA PARCELA PMS 3.199 (ACTIVO 35-2336 DENOMINADOPARQUE ROMA) POR LO QUE ES POSIBLE QUE EXISTA UNA DOBLE INMATRICULACIÓN." ;
+  gz:plot "9060.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/144> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300107" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ANDRÉS TORREJÓN NUM 19" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "488.75 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/145> a gz:GreenZone ;
+  gz:district "RETIRO" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "301085" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ANGELES GARCÍA MADRID NUM 20" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO." ;
+  gz:plot "1788.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/146> a gz:GreenZone ;
+  gz:district "SALAMANCA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300108" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE SALAS NUM 1" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDE BÁSICO." ;
+  gz:plot "677.61 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/SALAMANCA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/147> a gz:GreenZone ;
+  gz:district "SALAMANCA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300109" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE GOYA NUM 2" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. LA PARCELA TIENE UNA SUPERFICIE TOTAL DE19.928,66 M2; CONSTA CON DOS CALIFICACIONES URBANÍSTICAS, UNA PARTE COMO ZONA VERDE BÁSICA CON UNASUPERFICIE DE 17.644 M2 Y LA OTRA PARTE DE 2.284,66 M2 COMO VÍA PÚBLICA. BAJO LA ZONA VERDE SEENCUENTRAN CONSTRUÍDAS DOS EDIFICACIONES: 1.TEATRO FERNÁN GÓMEZ. CENTRO DE ARTE CON UNA SUPERFICIECONSTRUÍDA DE 11.950,46 M2, REPARTIDA EN TRES PLANTAS BAJO RASANTE. 2.APARCAMIENTO MUNICIPAL ALBERGAEN LA PLANTA -1 UNA BASE DE GRÚA MUNICIPAL, UNA BASE DE SAMUR Y TAXI, Y UN APARCAMIENTO EN EL RESTODE LA PLANTA -1 Y LA TOTALIDAD DE LAS PLANTAS -2 Y -3. TIENE UNA SUPERFICIE CONSTRUÍDA TOTAL DE23.438,00 M2 REPARTIDAS EN TRES PLANTAS BAJO RASANTE." ;
+  gz:plot "19928.66 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/SALAMANCA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/148> a gz:GreenZone ;
+  gz:district "SALAMANCA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300110" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "AVENIDA DE BRASILIA NUM 2" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. DENTRO DE SU PERIMETRO SE ENCUENTRAN UBICADOSUNOS VESTUARIOS DEPORTIVOS Y LA INSTALACIÓN DEPORTIVA BÁSICA PARQUE BREOGÁN (CAMPO DE FÚTBOL 7 DECÉSPED ARTIFICIAL, PISTA DE BALONCESTO Y ÁREA INFANTIL." ;
+  gz:plot "19750.50 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/SALAMANCA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/149> a gz:GreenZone ;
+  gz:district "SALAMANCA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300111" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "AVENIDA DE BRASILIA NUM 6" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. DENTRO DEL PERIMETRO DEL PARQUE SE ENCUENTRAUBICADA UNA CASETA DE JARDINEROS<(> ,<)> UNA PISTA DE BALONCESTO, UNA PISTA DE FÚTBOL SALA, 4 PISTASDE PÁDEL, UNA PISTA DE PETANCA,UN CIRCUITO DE EJERCICIOS FÍSICOS, DOS ÁREAS INFANTILES Y UN ÁREACANINA." ;
+  gz:plot "73900.00 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/SALAMANCA> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/zone/150> a gz:GreenZone ;
+  gz:district "SALAMANCA" ;
+  gz:subepigrafe "ZONAS VERDES" ;
+  gz:apartado "PARQUES Y JARDINES" ;
+  gz:fileNumber "300112" ;
+  gz:propertyNature "URBANA" ;
+  gz:situationTarget "CALLE DE ENRIQUE D'ALMONTE NUM 1" ;
+  gz:destination "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR." ;
+  gz:plot "76063.21 m2" ;
+  gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/SALAMANCA> .
+
+########## District Instances ##########
+
+<http://linkeddata.greenzonesmadrid.org/resource/district/ARGANZUELA> a gz:District ;
+  rdfs:label "ARGANZUELA"@es ;
+  owl:sameAs <https://www.wikidata.org/entity/Q2085949> .
+
 <http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO> a gz:District ;
-  rdfs:label "CENTRO" ;
+  rdfs:label "CENTRO"@es ;
   owl:sameAs <https://www.wikidata.org/entity/Q1763376> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO> a gz:District ;
+  rdfs:label "RETIRO"@es ;
+  owl:sameAs <https://www.wikidata.org/entity/Q2085951> .
+
+<http://linkeddata.greenzonesmadrid.org/resource/district/SALAMANCA> a gz:District ;
+  rdfs:label "SALAMANCA"@es ;
+  owl:sameAs <https://www.wikidata.org/entity/Q2085956> .
+

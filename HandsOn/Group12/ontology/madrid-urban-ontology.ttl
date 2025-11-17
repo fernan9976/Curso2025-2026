@@ -1,0 +1,235 @@
+@prefix gz:   <http://linkeddata.greenzonesmadrid.org/ontology/gz#> .
+@prefix aq:   <http://linkeddata.airqualitymadrid.org/ontology/airquality#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct:  <http://purl.org/dc/terms/> .
+
+<http://linkeddata.greenzonesmadrid.org/ontology/madrid-urban>
+    a owl:Ontology ;
+    rdfs:label "Madrid Urban Data Ontology"@en ;
+    rdfs:label "Ontología de Datos Urbanos de Madrid"@es ;
+    rdfs:comment "Unified lightweight ontology to represent municipal green zones (parks and gardens) and air quality data for Madrid, including their administrative districts and external links."@en ;
+    rdfs:comment "Ontología ligera unificada para representar zonas verdes municipales (parques y jardines) y datos de calidad del aire de Madrid, incluyendo sus distritos administrativos y enlaces externos."@es ;
+    dct:created "2025"^^xsd:gYear ;
+    dct:creator "Group12 - Curso 2025-2026" ;
+    owl:imports <http://linkeddata.greenzonesmadrid.org/ontology/gz> ,
+                <http://linkeddata.airqualitymadrid.org/ontology/airquality> .
+
+##############################
+# GREEN ZONES MODULE
+##############################
+
+<http://linkeddata.greenzonesmadrid.org/ontology/gz>
+    a owl:Ontology ;
+    rdfs:label "Green Zones Ontology for Madrid"@en ;
+    rdfs:label "Ontología de Zonas Verdes de Madrid"@es ;
+    rdfs:comment "Module for representing municipal green areas such as parks and gardens."@en ;
+    rdfs:comment "Módulo para representar áreas verdes municipales como parques y jardines."@es .
+
+########## Green Zones Classes ##########
+
+gz:GreenZone a owl:Class ;
+    rdfs:label "Green Zone"@en ;
+    rdfs:label "Zona Verde"@es ;
+    rdfs:comment "Municipal green area such as a park or garden."@en ;
+    rdfs:comment "Área verde municipal como un parque o jardín."@es .
+
+gz:District a owl:Class ;
+    rdfs:label "District"@en ;
+    rdfs:label "Distrito"@es ;
+    rdfs:comment "Administrative district of Madrid to which a green zone belongs."@en ;
+    rdfs:comment "Distrito administrativo de Madrid al que pertenece una zona verde."@es .
+
+########## Green Zones Object Properties ##########
+
+gz:inDistrict a owl:ObjectProperty ;
+    rdfs:label "in district"@en ;
+    rdfs:label "en distrito"@es ;
+    rdfs:comment "Links a green zone to the administrative district where it is located."@en ;
+    rdfs:comment "Enlaza una zona verde con el distrito administrativo donde se encuentra."@es ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  gz:District .
+
+########## Green Zones Datatype Properties ##########
+
+gz:district a owl:DatatypeProperty ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "district (literal name)"@en ;
+    rdfs:label  "distrito (nombre literal)"@es ;
+    rdfs:comment "Literal district name as provided in the original dataset (e.g., 'CENTRO')."@en ;
+    rdfs:comment "Nombre literal del distrito según se proporciona en el dataset original (ej., 'CENTRO')."@es .
+
+gz:subepigrafe a owl:DatatypeProperty ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "subepígrafe"@es ;
+    rdfs:label  "sub-heading"@en ;
+    rdfs:comment "Categoría general de la zona verde en el inventario municipal."@es ;
+    rdfs:comment "General category of the green zone in the municipal inventory."@en .
+
+gz:apartado a owl:DatatypeProperty ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "apartado"@es ;
+    rdfs:label  "section"@en ;
+    rdfs:comment "Subcategoría o apartado administrativo (por ejemplo, 'PARQUES Y JARDINES')."@es ;
+    rdfs:comment "Subcategory or administrative section (e.g., 'PARQUES Y JARDINES')."@en .
+
+gz:fileNumber a owl:DatatypeProperty ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "número de archivo"@es ;
+    rdfs:label  "file number"@en ;
+    rdfs:comment "Identificador interno o código de expediente asociado a la zona verde."@es ;
+    rdfs:comment "Internal identifier or file code associated with the green zone."@en .
+
+gz:propertyNature a owl:DatatypeProperty ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "naturaleza del inmueble"@es ;
+    rdfs:label  "property nature"@en ;
+    rdfs:comment "Naturaleza jurídica/urbanística del suelo (por ejemplo, URBANA)."@es ;
+    rdfs:comment "Legal/urban nature of the land (e.g., URBANA)."@en .
+
+gz:situationTarget a owl:DatatypeProperty ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "situación destino"@es ;
+    rdfs:label  "situation target"@en ;
+    rdfs:comment "Localización descriptiva de la parcela o solar (calles, cruces, números)."@es ;
+    rdfs:comment "Descriptive location of the plot or lot (streets, crossings, numbers)."@en .
+
+gz:destination a owl:DatatypeProperty ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "destino"@es ;
+    rdfs:label  "destination"@en ;
+    rdfs:comment "Destino dotacional / uso previsto (por ejemplo, 'DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO.')."@es ;
+    rdfs:comment "Designated use / planned purpose (e.g., 'DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO.')."@en .
+
+gz:plot a owl:DatatypeProperty ;
+    rdfs:domain gz:GreenZone ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "superficie del solar"@es ;
+    rdfs:label  "plot surface area"@en ;
+    rdfs:comment "Superficie declarada de la zona verde (m2). Nota: actualmente cadena con sufijo 'm2'; se puede normalizar a xsd:decimal en el futuro."@es ;
+    rdfs:comment "Declared surface area of the green zone (m2). Note: currently a string with 'm2' suffix; can be normalized to xsd:decimal in the future."@en .
+
+##############################
+# AIR QUALITY MODULE
+##############################
+
+<http://linkeddata.airqualitymadrid.org/ontology/airquality>
+    a owl:Ontology ;
+    rdfs:label "Air Quality Ontology for Madrid"@en ;
+    rdfs:label "Ontología de Calidad del Aire de Madrid"@es ;
+    rdfs:comment "Module for representing air-quality measurements from Madrid stations."@en ;
+    rdfs:comment "Módulo para representar mediciones de calidad del aire de estaciones de Madrid."@es .
+
+########## Air Quality Classes ##########
+
+aq:Station a owl:Class ;
+    rdfs:label "Air Quality Station"@en ;
+    rdfs:label "Estación de Calidad del Aire"@es ;
+    rdfs:comment "A monitoring station that measures air quality parameters."@en ;
+    rdfs:comment "Una estación de monitoreo que mide parámetros de calidad del aire."@es .
+
+aq:Measurement a owl:Class ;
+    rdfs:label "Air Quality Measurement"@en ;
+    rdfs:label "Medición de Calidad del Aire"@es ;
+    rdfs:comment "A measurement of air quality parameters at a specific time and location."@en ;
+    rdfs:comment "Una medición de parámetros de calidad del aire en un tiempo y lugar específicos."@es .
+
+########## Air Quality Object Properties ##########
+
+aq:hasStation a owl:ObjectProperty ;
+    rdfs:domain aq:Measurement ;
+    rdfs:range  aq:Station ;
+    rdfs:label  "has station"@en ;
+    rdfs:label  "tiene estación"@es ;
+    rdfs:comment "Links a measurement to the station where it was taken."@en ;
+    rdfs:comment "Enlaza una medición con la estación donde se tomó."@es .
+
+########## Air Quality Datatype Properties ##########
+
+aq:latitude a owl:DatatypeProperty ;
+    rdfs:domain aq:Station ;
+    rdfs:range  xsd:float ;
+    rdfs:label  "latitude"@en ;
+    rdfs:label  "latitud"@es ;
+    rdfs:comment "Geographic latitude of the station."@en ;
+    rdfs:comment "Latitud geográfica de la estación."@es .
+
+aq:longitude a owl:DatatypeProperty ;
+    rdfs:domain aq:Station ;
+    rdfs:range  xsd:float ;
+    rdfs:label  "longitude"@en ;
+    rdfs:label  "longitud"@es ;
+    rdfs:comment "Geographic longitude of the station."@en ;
+    rdfs:comment "Longitud geográfica de la estación."@es .
+
+aq:stationName a owl:DatatypeProperty ;
+    rdfs:domain aq:Station ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "station name"@en ;
+    rdfs:label  "nombre de la estación"@es ;
+    rdfs:comment "Official name of the air quality station."@en ;
+    rdfs:comment "Nombre oficial de la estación de calidad del aire."@es .
+
+aq:stationCode a owl:DatatypeProperty ;
+    rdfs:domain aq:Station ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "station code"@en ;
+    rdfs:label  "código de la estación"@es ;
+    rdfs:comment "Official code or identifier of the station."@en ;
+    rdfs:comment "Código o identificador oficial de la estación."@es .
+
+aq:pollutant a owl:DatatypeProperty ;
+    rdfs:domain aq:Measurement ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "pollutant"@en ;
+    rdfs:label  "contaminante"@es ;
+    rdfs:comment "Type of pollutant or parameter measured (e.g., NO2, PM10)."@en ;
+    rdfs:comment "Tipo de contaminante o parámetro medido (ej., NO2, PM10)."@es .
+
+aq:value a owl:DatatypeProperty ;
+    rdfs:domain aq:Measurement ;
+    rdfs:range  xsd:float ;
+    rdfs:label  "value"@en ;
+    rdfs:label  "valor"@es ;
+    rdfs:comment "Numerical value of the measurement."@en ;
+    rdfs:comment "Valor numérico de la medición."@es .
+
+aq:unit a owl:DatatypeProperty ;
+    rdfs:domain aq:Measurement ;
+    rdfs:range  xsd:string ;
+    rdfs:label  "unit"@en ;
+    rdfs:label  "unidad"@es ;
+    rdfs:comment "Unit of measurement (e.g., µg/m³, ppm)."@en ;
+    rdfs:comment "Unidad de medida (ej., µg/m³, ppm)."@es .
+
+aq:timestamp a owl:DatatypeProperty ;
+    rdfs:domain aq:Measurement ;
+    rdfs:range  xsd:dateTime ;
+    rdfs:label  "timestamp"@en ;
+    rdfs:label  "marca de tiempo"@es ;
+    rdfs:comment "Date and time when the measurement was taken."@en ;
+    rdfs:comment "Fecha y hora en que se tomó la medición."@es .
+
+##############################
+# CROSS-MODULE RELATIONSHIPS
+##############################
+
+# Relación potencial entre Distrito y Estaciones de Calidad del Aire
+# (puede expandirse en futuras versiones)
+
+aq:inDistrict a owl:ObjectProperty ;
+    rdfs:label "in district"@en ;
+    rdfs:label "en distrito"@es ;
+    rdfs:comment "Links an air quality station to the administrative district where it is located."@en ;
+    rdfs:comment "Enlaza una estación de calidad del aire con el distrito administrativo donde se encuentra."@es ;
+    rdfs:domain aq:Station ;
+    rdfs:range  gz:District .
