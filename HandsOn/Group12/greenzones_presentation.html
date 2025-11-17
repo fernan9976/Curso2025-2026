@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontología Zonas Verdes Madrid - Presentación</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: white;
+            overflow: visible;
+        }
+
+        /* Print optimization */
+        @media print {
+            .slide {
+                page-break-after: always;
+                page-break-inside: avoid;
+                margin: 0;
+                padding: 40px !important;
+                box-shadow: none !important;
+                border: none !important;
+            }
+            .navigation, button {
+                display: none !important;
+            }
+            .slide-counter {
+                font-size: 0.9em;
+            }
+        }
+
+        @page {
+            size: 1920px 1080px;
+            margin: 0;
+        }
+
+        .presentation {
+            width: 100%;
+            display: block;
+        }
+
+        .slide {
+            width: 1920px;
+            height: 1080px;
+            background: white;
+            padding: 80px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            page-break-after: always;
+            page-break-inside: avoid;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        .slide:first-child {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .slide:first-child h1,
+        .slide:first-child p,
+        .slide:first-child .stat-number,
+        .slide:first-child .stat-label {
+            color: white;
+        }
+
+        .slide:last-child {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .slide:last-child h1,
+        .slide:last-child p {
+            color: white;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #667eea;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            color: #34495e;
+            font-size: 1.5em;
+            margin: 25px 0 15px 0;
+        }
+
+        p, li {
+            color: #555;
+            font-size: 1.2em;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            margin-left: 30px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.3em;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .highlight {
+            background: #ffe066;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-size: 0.95em;
+        }
+
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        .results {
+            background: #e8f5e9;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #4caf50;
+            margin: 20px 0;
+        }
+
+        .navigation {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            display: none; /* Hidden for print */
+            gap: 15px;
+        }
+
+        @media screen {
+            .navigation {
+                display: flex;
+            }
+            .slide:not(.active) {
+                display: none;
+            }
+            .slide.active {
+                display: flex;
+                animation: slideIn 0.5s ease-out;
+            }
+            @keyframes slideIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        @media print {
+            .slide {
+                display: flex !important;
+            }
+        }
+
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+
+        button:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        button:disabled {
+            background: #bdc3c7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .slide-counter {
+            position: absolute;
+            bottom: 30px;
+            left: 40px;
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #dee2e6;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .stat-label {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .emoji {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation">
+        <!-- Slide 1: Portada -->
+        <div class="slide active">
+            <h1>🌳 Ontología de Zonas Verdes de Madrid</h1>
+            <p class="subtitle">Demostración práctica de consultas SPARQL</p>
+            <div class="stats" style="margin-top: 80px;">
+                <div class="stat-item">
+                    <div class="stat-number">150</div>
+                    <div class="stat-label">Zonas Verdes</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Distritos</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Linked Data</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 60px; font-size: 1.1em;">
+                <strong>Group 12</strong> - Curso 2025-2026<br>
+                Dataset: Ayuntamiento de Madrid (CC BY 4.0)
+            </p>
+        </div>
+
+        <!-- Slide 2: Resumen del Proyecto -->
+        <div class="slide">
+            <h2>📋 Resumen del Proyecto</h2>
+            <div class="grid-2">
+                <div class="box">
+                    <h3>🎯 Objetivo</h3>
+                    <p>Transformar el inventario de zonas verdes del Ayuntamiento de Madrid en <span class="highlight">Linked Open Data</span></p>
+                </div>
+                <div class="box">
+                    <h3>🔗 Enlazado</h3>
+                    <p>Conexión con <span class="highlight">Wikidata</span> para enriquecer los datos con información externa</p>
+                </div>
+            </div>
+            <h3 style="margin-top: 40px;">✅ Cumplimiento de Requisitos</h3>
+            <ul>
+                <li>✓ Una sola ontología unificada (<code>madrid-urban-ontology.ttl</code>)</li>
+                <li>✓ 150 instancias RDF (>100 requerido)</li>
+                <li>✓ Distritos como entidades (no strings)</li>
+                <li>✓ Enlaces externos a Wikidata con <code>owl:sameAs</code></li>
+                <li>✓ Licencias documentadas (CC BY 4.0)</li>
+            </ul>
+        </div>
+
+        <!-- Slide 3: Arquitectura de la Ontología -->
+        <div class="slide">
+            <h2>🏗️ Arquitectura de la Ontología</h2>
+            <h3>Clases Principales</h3>
+            <div class="grid-2">
+                <div class="box">
+                    <h3>🌳 gz:GreenZone</h3>
+                    <p>Representa una zona verde municipal (parque, jardín, etc.)</p>
+                    <p><strong>Propiedades:</strong> distrito, superficie, destino, ubicación...</p>
+                </div>
+                <div class="box">
+                    <h3>🏛️ gz:District</h3>
+                    <p>Representa un distrito administrativo de Madrid</p>
+                    <p><strong>Enlaces:</strong> Wikidata mediante <code>owl:sameAs</code></p>
+                </div>
+            </div>
+            <h3 style="margin-top: 30px;">🔗 Relación Clave</h3>
+            <div class="code-block">
+gz:inDistrict  (ObjectProperty)
+  Dominio: gz:GreenZone
+  Rango: gz:District
+  
+Ejemplo:
+  zone/1 gz:inDistrict district/CENTRO .
+  district/CENTRO owl:sameAs &lt;wikidata.org/entity/Q1763376&gt; .
+            </div>
+        </div>
+
+        <!-- Slide 4: Consulta 1 - Contar Zonas -->
+        <div class="slide">
+            <h2>🔍 Consulta 1: Contar Zonas Verdes</h2>
+            <p><span class="emoji">❓</span><strong>Pregunta:</strong> ¿Cuántas zonas verdes hay en total?</p>
+            
+            <h3>Consulta SPARQL:</h3>
+            <div class="code-block">
+PREFIX gz: &lt;http://linkeddata.greenzonesmadrid.org/ontology/gz#&gt;
+
+SELECT (COUNT(?zone) AS ?numZonas)
+WHERE {
+  ?zone a gz:GreenZone .
+}
+            </div>
+
+            <h3>Resultado:</h3>
+            <div class="results">
+                <div style="font-size: 2.5em; font-weight: bold; color: #4caf50; text-align: center;">
+                    150 zonas verdes
+                </div>
+                <p style="text-align: center; margin-top: 15px; font-size: 1.1em;">
+                    ✅ Se han transformado todas las instancias correctamente
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 5: Consulta 2 - Datos de Zonas -->
+        <div class="slide">
+            <h2>🔍 Consulta 2: Datos de Zonas con Distritos</h2>
+            <p><span class="emoji">❓</span><strong>Pregunta:</strong> Mostrar zonas con su distrito enlazado</p>
+            
+            <h3>Consulta SPARQL:</h3>
+            <div class="code-block">
+SELECT ?zone ?districtName ?fileNumber
+WHERE {
+  ?zone a gz:GreenZone ;
+        gz:fileNumber ?fileNumber ;
+        gz:inDistrict ?districtRes .
+  ?districtRes rdfs:label ?districtName .
+}
+LIMIT 5
+            </div>
+
+            <h3>Resultados (muestra):</h3>
+            <div class="results">
+                <p>✅ <strong>zone/1</strong> → Distrito: <span class="highlight">CENTRO</span> → File: 300000</p>
+                <p>✅ <strong>zone/2</strong> → Distrito: <span class="highlight">CENTRO</span> → File: 300001</p>
+                <p>✅ <strong>zone/38</strong> → Distrito: <span class="highlight">ARGANZUELA</span> → File: 300032</p>
+            </div>
+        </div>
+
+        <!-- Slide 6: Consulta 3 - Enlaces Wikidata -->
+        <div class="slide">
+            <h2>🔍 Consulta 3: Verificar Enlaces a Wikidata</h2>
+            <p><span class="emoji">❓</span><strong>Pregunta:</strong> ¿Los distritos están enlazados con Wikidata?</p>
+            
+            <h3>Consulta SPARQL:</h3>
+            <div class="code-block">
+SELECT ?districtRes ?label ?wikidata
+WHERE {
+  ?districtRes a gz:District ;
+               rdfs:label ?label ;
+               owl:sameAs ?wikidata .
+}
+            </div>
+
+            <h3>Resultados:</h3>
+            <div class="results">
+                <p>🔗 <strong>CENTRO</strong> → <code>wikidata.org/entity/Q1763376</code></p>
+                <p>🔗 <strong>ARGANZUELA</strong> → <code>wikidata.org/entity/Q2085949</code></p>
+                <p>🔗 <strong>RETIRO</strong> → <code>wikidata.org/entity/Q2085951</code></p>
+                <p>🔗 <strong>SALAMANCA</strong> → <code>wikidata.org/entity/Q2085956</code></p>
+                <p style="margin-top: 20px; font-weight: bold; color: #667eea;">
+                    ✅ Todos los distritos están correctamente enlazados con Wikidata
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 7: Consulta 4 - Agrupación por Distrito -->
+        <div class="slide">
+            <h2>🔍 Consulta 4: Zonas por Distrito</h2>
+            <p><span class="emoji">❓</span><strong>Pregunta:</strong> ¿Cuántas zonas verdes hay en cada distrito?</p>
+            
+            <h3>Consulta SPARQL:</h3>
+            <div class="code-block">
+SELECT ?districtRes (COUNT(?zone) AS ?numZonas)
+WHERE {
+  ?zone a gz:GreenZone ;
+        gz:inDistrict ?districtRes .
+}
+GROUP BY ?districtRes
+            </div>
+
+            <h3>Resultados (visualización):</h3>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">37</div>
+                    <div class="stat-label">CENTRO</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">94</div>
+                    <div class="stat-label">ARGANZUELA</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">14</div>
+                    <div class="stat-label">RETIRO</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">SALAMANCA</div>
+                </div>
+            </div>
+            <p style="text-align: center; font-size: 1.1em; color: #667eea; margin-top: 30px;">
+                📊 Distribución clara de zonas verdes por distrito administrativo
+            </p>
+        </div>
+
+        <!-- Slide 8: Consulta 5 - Filtrado -->
+        <div class="slide">
+            <h2>🔍 Consulta 5: Filtrar por Distrito CENTRO</h2>
+            <p><span class="emoji">❓</span><strong>Pregunta:</strong> ¿Qué zonas pertenecen al distrito Centro?</p>
+            
+            <h3>Consulta SPARQL:</h3>
+            <div class="code-block">
+SELECT ?zone ?file ?dest
+WHERE {
+  ?zone gz:inDistrict 
+    &lt;http://.../resource/district/CENTRO&gt; ;
+        gz:fileNumber ?file ;
+        gz:destination ?dest .
+}
+            </div>
+
+            <h3>Resultados (muestra):</h3>
+            <div class="results">
+                <p><strong>File 300000:</strong> DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO</p>
+                <p><strong>File 300001:</strong> DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR</p>
+                <p><strong>File 300002:</strong> DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO</p>
+                <p style="margin-top: 15px;">... (37 zonas en total)</p>
+                <p style="margin-top: 20px; font-weight: bold; color: #667eea;">
+                    ✅ Filtrado semántico funcionando correctamente
+                </p>
+            </div>
+        </div>
+
+        <!-- Slide 9: Conclusiones -->
+        <div class="slide">
+            <h2>✨ Conclusiones</h2>
+            <h3>Logros del Proyecto</h3>
+            <ul>
+                <li>✅ <strong>150 instancias RDF</strong> correctamente modeladas</li>
+                <li>✅ <strong>Ontología unificada</strong> con módulos de zonas verdes y calidad del aire</li>
+                <li>✅ <strong>Linked Open Data</strong> mediante enlaces a Wikidata</li>
+                <li>✅ <strong>Consultas SPARQL</strong> funcionales y verificadas</li>
+                <li>✅ <strong>Documentación completa</strong> de licencias y estrategia de nombrado</li>
+            </ul>
+
+            <h3 style="margin-top: 40px;">🎯 Próximos Pasos</h3>
+            <ul>
+                <li>Desarrollar aplicación web interactiva</li>
+                <li>Añadir visualizaciones geoespaciales</li>
+                <li>Integrar datos de calidad del aire</li>
+                <li>Expandir enlaces con más fuentes (GeoNames, DBpedia)</li>
+            </ul>
+        </div>
+
+        <!-- Slide 10: Gracias -->
+        <div class="slide">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+                <h1 style="font-size: 4em; margin-bottom: 30px;">¡Gracias! 🌳</h1>
+                <p style="font-size: 1.5em; color: #7f8c8d; text-align: center; margin-bottom: 50px;">
+                    Ontología de Zonas Verdes de Madrid<br>
+                    <strong>Group 12</strong> - Curso 2025-2026
+                </p>
+                <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; border: 2px solid #dee2e6;">
+                    <p style="font-size: 1.2em; color: #555; margin-bottom: 15px;">
+                        📧 Contacto: fernando.delgado@ejemplo.com
+                    </p>
+                    <p style="font-size: 1.2em; color: #555; margin-bottom: 15px;">
+                        🔗 GitHub: github.com/Group12/HandsOn
+                    </p>
+                    <p style="font-size: 1.2em; color: #555;">
+                        🌐 Dataset: datos.madrid.es (CC BY 4.0)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + totalSlides) % totalSlides;
+            slides[currentSlide].classList.add('active');
+            updateNavigation();
+        }
+
+        function updateNavigation() {
+            // Update all navigation controls
+            document.querySelectorAll('.slide-counter').forEach(counter => {
+                counter.textContent = `${currentSlide + 1} / ${totalSlides}`;
+            });
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+        // Create navigation for each slide
+        slides.forEach((slide, index) => {
+            const nav = document.createElement('div');
+            nav.className = 'navigation';
+            nav.innerHTML = `
+                <button onclick="prevSlide()" ${index === 0 ? 'disabled' : ''}>← Anterior</button>
+                <button onclick="nextSlide()" ${index === totalSlides - 1 ? 'disabled' : ''}>Siguiente →</button>
+            `;
+            slide.appendChild(nav);
+
+            const counter = document.createElement('div');
+            counter.className = 'slide-counter';
+            counter.textContent = `${index + 1} / ${totalSlides}`;
+            slide.appendChild(counter);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+    </script>
+</body>
+</html>

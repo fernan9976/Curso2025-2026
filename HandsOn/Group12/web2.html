@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ontología Zonas Verdes Madrid - Demo Completa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-out;
+        }
+        .tab-active {
+            border-bottom: 3px solid #7c3aed;
+            color: #7c3aed;
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-purple-600 via-indigo-600 to-blue-700 min-h-screen">
+    <!-- Navigation Bar -->
+    <nav class="bg-white/10 backdrop-blur-md border-b border-white/20">
+        <div class="max-w-7xl mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="text-4xl">🌳</div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">Zonas Verdes Madrid</h1>
+                        <p class="text-sm text-purple-100">Ontología RDF + SPARQL</p>
+                    </div>
+                </div>
+                <div class="flex gap-4">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white">150</div>
+                        <div class="text-xs text-purple-100">Zonas</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white">4</div>
+                        <div class="text-xs text-purple-100">Distritos</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-white">100%</div>
+                        <div class="text-xs text-purple-100">Linked</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto p-6">
+        <!-- Tabs -->
+        <div class="bg-white rounded-t-xl shadow-lg">
+            <div class="flex border-b">
+                <button onclick="showTab('queries')" id="tab-queries" class="tab-active px-6 py-4 font-semibold transition-all">
+                    🔍 Consultas SPARQL
+                </button>
+                <button onclick="showTab('stats')" id="tab-stats" class="px-6 py-4 font-semibold text-gray-600 hover:text-purple-600 transition-all">
+                    📊 Estadísticas
+                </button>
+                <button onclick="showTab('explorer')" id="tab-explorer" class="px-6 py-4 font-semibold text-gray-600 hover:text-purple-600 transition-all">
+                    🗺️ Explorador
+                </button>
+                <button onclick="showTab('ontology')" id="tab-ontology" class="px-6 py-4 font-semibold text-gray-600 hover:text-purple-600 transition-all">
+                    🏗️ Ontología
+                </button>
+            </div>
+        </div>
+
+        <!-- Tab Content -->
+        <div class="bg-white rounded-b-xl shadow-lg p-6">
+            <!-- Tab 1: Consultas SPARQL -->
+            <div id="content-queries" class="tab-content">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                    <button onclick="executeQuery(1)" class="query-card p-4 rounded-lg bg-gradient-to-br from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">💾</div>
+                        <h3 class="font-bold mb-1">Contar Zonas</h3>
+                        <p class="text-xs opacity-80">Total de zonas verdes</p>
+                    </button>
+                    <button onclick="executeQuery(2)" class="query-card p-4 rounded-lg bg-gradient-to-br from-blue-500 to-blue-600 text-white hover:from-blue-600 hover:to-blue-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">📍</div>
+                        <h3 class="font-bold mb-1">Por Distrito</h3>
+                        <p class="text-xs opacity-80">Zonas con ubicación</p>
+                    </button>
+                    <button onclick="executeQuery(3)" class="query-card p-4 rounded-lg bg-gradient-to-br from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">🔗</div>
+                        <h3 class="font-bold mb-1">Wikidata</h3>
+                        <p class="text-xs opacity-80">Enlaces externos</p>
+                    </button>
+                    <button onclick="executeQuery(4)" class="query-card p-4 rounded-lg bg-gradient-to-br from-orange-500 to-orange-600 text-white hover:from-orange-600 hover:to-orange-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">🔍</div>
+                        <h3 class="font-bold mb-1">Filtrar Centro</h3>
+                        <p class="text-xs opacity-80">Solo distrito Centro</p>
+                    </button>
+                    <button onclick="executeQuery(5)" class="query-card p-4 rounded-lg bg-gradient-to-br from-pink-500 to-pink-600 text-white hover:from-pink-600 hover:to-pink-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">📏</div>
+                        <h3 class="font-bold mb-1">Más Grandes</h3>
+                        <p class="text-xs opacity-80">Top 5 por superficie</p>
+                    </button>
+                    <button onclick="executeQuery(6)" class="query-card p-4 rounded-lg bg-gradient-to-br from-indigo-500 to-indigo-600 text-white hover:from-indigo-600 hover:to-indigo-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">🏛️</div>
+                        <h3 class="font-bold mb-1">Distritos</h3>
+                        <p class="text-xs opacity-80">Conteo por distrito</p>
+                    </button>
+                    <button onclick="executeQuery(7)" class="query-card p-4 rounded-lg bg-gradient-to-br from-teal-500 to-teal-600 text-white hover:from-teal-600 hover:to-teal-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">🎯</div>
+                        <h3 class="font-bold mb-1">Tipo Básico</h3>
+                        <p class="text-xs opacity-80">Solo zonas básicas</p>
+                    </button>
+                    <button onclick="executeQuery(8)" class="query-card p-4 rounded-lg bg-gradient-to-br from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">⭐</div>
+                        <h3 class="font-bold mb-1">Singulares</h3>
+                        <p class="text-xs opacity-80">Zonas especiales</p>
+                    </button>
+                    <button onclick="executeQuery(9)" class="query-card p-4 rounded-lg bg-gradient-to-br from-cyan-500 to-cyan-600 text-white hover:from-cyan-600 hover:to-cyan-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">🔗</div>
+                        <h3 class="font-bold mb-1">ObjectProperty</h3>
+                        <p class="text-xs opacity-80">Distritos enlazados</p>
+                    </button>
+                    <button onclick="executeQuery(10)" class="query-card p-4 rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 text-white hover:from-amber-600 hover:to-amber-700 transition-all transform hover:scale-105 shadow-lg">
+                        <div class="text-3xl mb-2">🧭</div>
+                        <h3 class="font-bold mb-1">Navegación</h3>
+                        <p class="text-xs opacity-80">Zona→Distrito→Wiki</p>
+                    </button>
+                </div>
+
+                <div id="queryDisplay" class="hidden grid grid-cols-1 lg:grid-cols-2 gap-6 fade-in">
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
+                            <span>💻</span> Consulta SPARQL
+                        </h2>
+                        <pre id="sparqlCode" class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap max-h-96"></pre>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-xl font-bold text-gray-800 flex items-center gap-2">
+                                <span>📊</span> Resultados
+                            </h2>
+                            <button onclick="exportResults()" class="px-4 py-2 bg-purple-600 text-white rounded-lg text-sm hover:bg-purple-700 transition-all">
+                                ⬇️ Exportar CSV
+                            </button>
+                        </div>
+                        <div id="results" class="space-y-3 max-h-96 overflow-y-auto"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Estadísticas -->
+            <div id="content-stats" class="tab-content hidden">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl p-6 text-white shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-purple-100 mb-2">Total Zonas Verdes</p>
+                                <p class="text-5xl font-bold">150</p>
+                            </div>
+                            <div class="text-6xl opacity-50">🌳</div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl p-6 text-white shadow-lg">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-blue-100 mb-2">Distritos Cubiertos</p>
+                                <p class="text-5xl font-bold">4</p>
+                            </div>
+                            <div class="text-6xl opacity-50">🏛️</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
+                        <h3 class="text-lg font-bold mb-4">Distribución por Distrito</h3>
+                        <canvas id="chartDistrict"></canvas>
+                    </div>
+                    <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
+                        <h3 class="text-lg font-bold mb-4">Tipos de Zonas</h3>
+                        <canvas id="chartTypes"></canvas>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
+                    <h3 class="text-lg font-bold mb-4">Top 5 Zonas Más Grandes</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4 p-3 bg-purple-50 rounded-lg">
+                            <span class="text-2xl">🥇</span>
+                            <div class="flex-1">
+                                <p class="font-semibold">Parque del Retiro</p>
+                                <p class="text-sm text-gray-600">Distrito: RETIRO</p>
+                            </div>
+                            <span class="font-bold text-purple-600">1,181,753 m²</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-3 bg-blue-50 rounded-lg">
+                            <span class="text-2xl">🥈</span>
+                            <div class="flex-1">
+                                <p class="font-semibold">Parque Roma</p>
+                                <p class="text-sm text-gray-600">Distrito: RETIRO</p>
+                            </div>
+                            <span class="font-bold text-blue-600">183,270 m²</span>
+                        </div>
+                        <div class="flex items-center gap-4 p-3 bg-green-50 rounded-lg">
+                            <span class="text-2xl">🥉</span>
+                            <div class="flex-1">
+                                <p class="font-semibold">Arganzuela</p>
+                                <p class="text-sm text-gray-600">Distrito: ARGANZUELA</p>
+                            </div>
+                            <span class="font-bold text-green-600">108,873 m²</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Explorador -->
+            <div id="content-explorer" class="tab-content hidden">
+                <div class="mb-6">
+                    <div class="flex gap-4 mb-4">
+                        <input type="text" id="searchBox" placeholder="🔍 Buscar por distrito, archivo o destino..." class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        <select id="districtFilter" onchange="filterByDistrict()" class="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <option value="">Todos los distritos</option>
+                            <option value="CENTRO">CENTRO</option>
+                            <option value="ARGANZUELA">ARGANZUELA</option>
+                            <option value="RETIRO">RETIRO</option>
+                            <option value="SALAMANCA">SALAMANCA</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="explorerResults" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Se llenará dinámicamente -->
+                </div>
+            </div>
+
+            <!-- Tab 4: Ontología -->
+            <div id="content-ontology" class="tab-content hidden">
+                <div class="bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl p-6 text-white mb-6 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4 flex items-center gap-2">
+                        <span>💡</span> ¿Por qué RDF y Linked Data?
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <div class="text-3xl mb-2">🔗</div>
+                            <p class="font-semibold mb-2">Interoperabilidad</p>
+                            <p class="text-sm opacity-90">Los datos se enlazan con Wikidata, permitiendo integración con otros datasets globales</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <div class="text-3xl mb-2">🧠</div>
+                            <p class="font-semibold mb-2">Semántica Clara</p>
+                            <p class="text-sm opacity-90">Las relaciones tienen significado explícito (gz:inDistrict conecta zonas con distritos)</p>
+                        </div>
+                        <div class="bg-white/10 rounded-lg p-4">
+                            <div class="text-3xl mb-2">🔍</div>
+                            <p class="font-semibold mb-2">Consultas Potentes</p>
+                            <p class="text-sm opacity-90">SPARQL permite navegar el grafo: zona → distrito → Wikidata en una sola query</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-xl p-6 border border-purple-200">
+                        <h3 class="text-xl font-bold mb-4 text-purple-800 flex items-center gap-2">
+                            <span>🏗️</span> Clase: GreenZone
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded-lg border border-purple-100">
+                                <p class="font-semibold text-purple-700">URI:</p>
+                                <code class="text-sm text-gray-600">gz:GreenZone</code>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-purple-100">
+                                <p class="font-semibold text-purple-700">Descripción:</p>
+                                <p class="text-sm text-gray-600">Representa una zona verde municipal (parque, jardín, etc.)</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-purple-100">
+                                <p class="font-semibold text-purple-700 mb-2">Propiedades:</p>
+                                <ul class="text-sm text-gray-600 space-y-1">
+                                    <li>• gz:district (string)</li>
+                                    <li>• gz:fileNumber (string)</li>
+                                    <li>• gz:destination (string)</li>
+                                    <li>• gz:plot (string)</li>
+                                    <li>• gz:inDistrict (ObjectProperty)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-200">
+                        <h3 class="text-xl font-bold mb-4 text-blue-800 flex items-center gap-2">
+                            <span>🏛️</span> Clase: District
+                        </h3>
+                        <div class="space-y-3">
+                            <div class="bg-white p-3 rounded-lg border border-blue-100">
+                                <p class="font-semibold text-blue-700">URI:</p>
+                                <code class="text-sm text-gray-600">gz:District</code>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-blue-100">
+                                <p class="font-semibold text-blue-700">Descripción:</p>
+                                <p class="text-sm text-gray-600">Representa un distrito administrativo de Madrid</p>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-blue-100">
+                                <p class="font-semibold text-blue-700 mb-2">Enlaces:</p>
+                                <p class="text-sm text-gray-600">• owl:sameAs → Wikidata</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 bg-white rounded-xl p-6 border border-gray-200 shadow-lg">
+                    <h3 class="text-xl font-bold mb-4">Ejemplo de Triples RDF</h3>
+                    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono">@prefix gz: &lt;http://linkeddata.greenzonesmadrid.org/ontology/gz#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+
+# Zona Verde
+&lt;http://.../resource/zone/1&gt; a gz:GreenZone ;
+    gz:district "CENTRO" ;
+    gz:fileNumber "300000" ;
+    gz:destination "DOTACIONAL SERVICIOS COLECTIVOS..." ;
+    gz:plot "5025.42 m2" ;
+    gz:inDistrict &lt;http://.../resource/district/CENTRO&gt; .
+
+# Distrito
+&lt;http://.../resource/district/CENTRO&gt; a gz:District ;
+    rdfs:label "CENTRO"@es ;
+    owl:sameAs &lt;https://www.wikidata.org/entity/Q1763376&gt; .</pre>
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="bg-purple-50 rounded-lg p-4 border border-purple-200">
+                        <div class="text-3xl mb-2">📄</div>
+                        <p class="font-semibold text-purple-800">Licencia Dataset</p>
+                        <p class="text-sm text-gray-600 mt-2">CC BY 4.0</p>
+                    </div>
+                    <div class="bg-blue-50 rounded-lg p-4 border border-blue-200">
+                        <div class="text-3xl mb-2">🔗</div>
+                        <p class="font-semibold text-blue-800">Linked Open Data</p>
+                        <p class="text-sm text-gray-600 mt-2">5★ Linking</p>
+                    </div>
+                    <div class="bg-green-50 rounded-lg p-4 border border-green-200">
+                        <div class="text-3xl mb-2">📊</div>
+                        <p class="font-semibold text-green-800">Formato</p>
+                        <p class="text-sm text-gray-600 mt-2">RDF/Turtle</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-8 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 text-center text-white">
+                <p class="mb-2">🌳 <strong>Ontología de Zonas Verdes de Madrid</strong></p>
+                <p class="text-sm text-purple-100">
+                    Group 12 • Curso 2025-2026 • Datos: Ayuntamiento de Madrid (CC BY 4.0)
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Datos RDF completos
+        const rdfData = [
+            { zone: "zone/1", distrito: "CENTRO", fileNumber: "300000", destination: "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO", plot: "5025.42", wikidata: "Q1763376" },
+            { zone: "zone/2", distrito: "CENTRO", fileNumber: "300001", destination: "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR", plot: "26814.00", wikidata: "Q1763376" },
+            { zone: "zone/3", distrito: "CENTRO", fileNumber: "300002", destination: "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO", plot: "2979.20", wikidata: "Q1763376" },
+            { zone: "zone/38", distrito: "ARGANZUELA", fileNumber: "300032", destination: "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR", plot: "108873.35", wikidata: "Q2085949" },
+            { zone: "zone/39", distrito: "ARGANZUELA", fileNumber: "300034", destination: "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO", plot: "9141.50", wikidata: "Q2085949" },
+            { zone: "zone/129", distrito: "RETIRO", fileNumber: "300087", destination: "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR", plot: "1181753.00", wikidata: "Q2085951" },
+            { zone: "zone/131", distrito: "RETIRO", fileNumber: "300089", destination: "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO", plot: "183270.00", wikidata: "Q2085951" },
+            { zone: "zone/146", distrito: "SALAMANCA", fileNumber: "300108", destination: "DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDE BÁSICO", plot: "677.61", wikidata: "Q2085956" }
+        ];
+
+        let currentResults = [];
+
+        const queries = {
+            1: {
+                name: "Contar Zonas Verdes",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+
+SELECT (COUNT(?zone) AS ?numZonas)
+WHERE {
+  ?zone a gz:GreenZone .
+}`,
+                execute: () => [{ "📊 Total": "150 zonas verdes" }]
+            },
+            2: {
+                name: "Zonas con Distrito",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+
+SELECT ?zone ?distrito ?fileNumber
+WHERE {
+  ?zone a gz:GreenZone ;
+        gz:district ?distrito ;
+        gz:fileNumber ?fileNumber .
+}
+LIMIT 5`,
+                execute: () => rdfData.slice(0, 5).map(d => ({
+                    "🏙️ Zona": d.zone,
+                    "📍 Distrito": d.distrito,
+                    "📄 File": d.fileNumber
+                }))
+            },
+            3: {
+                name: "Enlaces a Wikidata",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+
+SELECT ?distrito ?wikidata
+WHERE {
+  ?districtRes a gz:District ;
+               rdfs:label ?distrito ;
+               owl:sameAs ?wikidata .
+}`,
+                execute: () => {
+                    const districts = [...new Map(rdfData.map(d => [d.distrito, d])).values()];
+                    return districts.map(d => ({
+                        "📍 Distrito": d.distrito,
+                        "🔗 Wikidata": `wikidata.org/entity/${d.wikidata}`
+                    }));
+                }
+            },
+            4: {
+                name: "Filtrar por CENTRO",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+
+SELECT ?zone ?file ?dest
+WHERE {
+  ?zone gz:district "CENTRO" ;
+        gz:fileNumber ?file ;
+        gz:destination ?dest .
+}`,
+                execute: () => rdfData
+                    .filter(d => d.distrito === "CENTRO")
+                    .map(d => ({
+                        "🏙️ Zona": d.zone,
+                        "📄 File": d.fileNumber,
+                        "📋 Destino": d.destination.substring(0, 40) + "..."
+                    }))
+            },
+            5: {
+                name: "Top 5 Más Grandes",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+
+SELECT ?zone ?distrito ?plot
+WHERE {
+  ?zone gz:district ?distrito ;
+        gz:plot ?plot .
+}
+ORDER BY DESC(?plot)
+LIMIT 5`,
+                execute: () => [...rdfData]
+                    .sort((a, b) => parseFloat(b.plot) - parseFloat(a.plot))
+                    .slice(0, 5)
+                    .map(d => ({
+                        "🏙️ Zona": d.zone,
+                        "📍 Distrito": d.distrito,
+                        "📏 Superficie": d.plot + " m²"
+                    }))
+            },
+            6: {
+                name: "Conteo por Distrito",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#
+
+>
+
+SELECT ?distrito (COUNT(?zone) AS ?count)
+WHERE {
+  ?zone gz:district ?distrito .
+}
+GROUP BY ?distrito`,
+                execute: () => {
+                    const counts = {};
+                    rdfData.forEach(d => {
+                        counts[d.distrito] = (counts[d.distrito] || 0) + 1;
+                    });
+                    return Object.entries(counts).map(([distrito, count]) => ({
+                        "📍 Distrito": distrito,
+                        "📊 Cantidad": count + " zonas"
+                    }));
+                }
+            },
+            7: {
+                name: "Solo Zonas Básicas",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+
+SELECT ?zone ?distrito
+WHERE {
+  ?zone gz:destination ?dest ;
+        gz:district ?distrito .
+  FILTER(CONTAINS(?dest, "BÁSICO"))
+}`,
+                execute: () => rdfData
+                    .filter(d => d.destination.includes("BÁSICO"))
+                    .map(d => ({
+                        "🏙️ Zona": d.zone,
+                        "📍 Distrito": d.distrito,
+                        "🎯 Tipo": "Básico"
+                    }))
+            },
+            8: {
+                name: "Zonas Singulares",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+
+SELECT ?zone ?distrito
+WHERE {
+  ?zone gz:destination ?dest ;
+        gz:district ?distrito .
+  FILTER(CONTAINS(?dest, "SINGULAR"))
+}`,
+                execute: () => rdfData
+                    .filter(d => d.destination.includes("SINGULAR"))
+                    .map(d => ({
+                        "🏙️ Zona": d.zone,
+                        "📍 Distrito": d.distrito,
+                        "⭐ Tipo": "Singular"
+                    }))
+            },
+            9: {
+                name: "Distritos como Entidades",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?distritoRecurso ?nombreDistrito
+WHERE {
+  ?zona a gz:GreenZone ;
+        gz:inDistrict ?distritoRecurso .
+  ?distritoRecurso a gz:District ;
+                   rdfs:label ?nombreDistrito .
+}
+LIMIT 5`,
+                execute: () => rdfData.slice(0, 5).map(d => ({
+                    "🌳 Zona": d.zone,
+                    "🔗 Distrito URI": `district/${d.distrito}`,
+                    "📍 Nombre": d.distrito
+                }))
+            },
+            10: {
+                name: "Navegación Zona→Distrito→Wikidata",
+                sparql: `PREFIX gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?zona ?nombreDistrito ?wikidata
+WHERE {
+  ?zona a gz:GreenZone ;
+        gz:inDistrict ?distrito .
+  ?distrito rdfs:label ?nombreDistrito ;
+            owl:sameAs ?wikidata .
+}
+LIMIT 5`,
+                execute: () => rdfData.slice(0, 5).map(d => ({
+                    "🌳 Zona": d.zone,
+                    "📍 Distrito": d.distrito,
+                    "🌐 Wikidata": `Q${d.wikidata}`,
+                    "✅ Enlazado": "owl:sameAs"
+                }))
+            }
+        };
+
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            
+            // Remove active class from all tabs
+            document.querySelectorAll('[id^="tab-"]').forEach(tab => {
+                tab.classList.remove('tab-active');
+                tab.classList.add('text-gray-600');
+            });
+            
+            // Show selected tab
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            document.getElementById('tab-' + tabName).classList.add('tab-active');
+            document.getElementById('tab-' + tabName).classList.remove('text-gray-600');
+
+            // Initialize charts when stats tab is shown
+            if (tabName === 'stats') {
+                setTimeout(initCharts, 100);
+            }
+
+            // Initialize explorer when shown
+            if (tabName === 'explorer') {
+                initExplorer();
+            }
+        }
+
+        function executeQuery(queryId) {
+            const query = queries[queryId];
+            currentResults = query.execute();
+            
+            // Show query display
+            document.getElementById('queryDisplay').classList.remove('hidden');
+            
+            // Show SPARQL code
+            document.getElementById('sparqlCode').textContent = query.sparql;
+            
+            // Show loading
+            const resultsDiv = document.getElementById('results');
+            resultsDiv.innerHTML = `
+                <div class="flex items-center justify-center py-12">
+                    <div class="animate-spin rounded-full h-12 w-12 border-b-4 border-purple-600"></div>
+                </div>
+            `;
+            
+            // Execute query after delay
+            setTimeout(() => {
+                let html = '';
+                currentResults.forEach(result => {
+                    html += '<div class="bg-purple-50 rounded-lg p-4 border border-purple-200">';
+                    Object.entries(result).forEach(([key, value]) => {
+                        html += `
+                            <div class="mb-2 last:mb-0">
+                                <span class="font-bold text-purple-700">${key}:</span>
+                                <span class="ml-2 text-gray-700">${value}</span>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                });
+                resultsDiv.innerHTML = html;
+            }, 500);
+        }
+
+        function exportResults() {
+            if (currentResults.length === 0) return;
+            
+            // Convert to CSV
+            const headers = Object.keys(currentResults[0]);
+            let csv = headers.join(',') + '\n';
+            
+            currentResults.forEach(row => {
+                const values = headers.map(header => {
+                    const value = row[header];
+                    return `"${value}"`;
+                });
+                csv += values.join(',') + '\n';
+            });
+            
+            // Download
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'resultados-sparql.csv';
+            a.click();
+        }
+
+        function initCharts() {
+            // Chart 1: Distribution by District
+            const ctx1 = document.getElementById('chartDistrict');
+            if (!ctx1) return;
+            
+            new Chart(ctx1, {
+                type: 'doughnut',
+                data: {
+                    labels: ['CENTRO', 'ARGANZUELA', 'RETIRO', 'SALAMANCA'],
+                    datasets: [{
+                        data: [37, 94, 14, 5],
+                        backgroundColor: [
+                            '#8b5cf6',
+                            '#3b82f6',
+                            '#10b981',
+                            '#f59e0b'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+
+            // Chart 2: Types
+            const ctx2 = document.getElementById('chartTypes');
+            if (!ctx2) return;
+            
+            new Chart(ctx2, {
+                type: 'bar',
+                data: {
+                    labels: ['Básico', 'Singular'],
+                    datasets: [{
+                        label: 'Cantidad',
+                        data: [120, 30],
+                        backgroundColor: ['#8b5cf6', '#ec4899']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            display: false
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        function initExplorer() {
+            displayExplorerResults(rdfData);
+        }
+
+        function displayExplorerResults(data) {
+            const container = document.getElementById('explorerResults');
+            let html = '';
+            
+            data.forEach(zone => {
+                const districtColors = {
+                    'CENTRO': 'from-purple-500 to-purple-600',
+                    'ARGANZUELA': 'from-blue-500 to-blue-600',
+                    'RETIRO': 'from-green-500 to-green-600',
+                    'SALAMANCA': 'from-orange-500 to-orange-600'
+                };
+                
+                html += `
+                    <div class="bg-gradient-to-br ${districtColors[zone.distrito]} rounded-xl p-6 text-white shadow-lg transform hover:scale-105 transition-all">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="text-3xl">🌳</div>
+                            <span class="px-3 py-1 bg-white/20 rounded-full text-xs font-semibold">${zone.distrito}</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2">${zone.zone}</h3>
+                        <div class="space-y-2 text-sm">
+                            <p class="opacity-90">📄 File: ${zone.fileNumber}</p>
+                            <p class="opacity-90">📏 ${zone.plot} m²</p>
+                            <p class="opacity-75 text-xs">${zone.destination.substring(0, 50)}...</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-white/20 flex justify-between items-center">
+                            <a href="https://wikidata.org/entity/${zone.wikidata}" target="_blank" class="text-xs opacity-75 hover:opacity-100">
+                                🔗 Wikidata
+                            </a>
+                            <button onclick="showRDF('${zone.zone}', '${zone.distrito}', '${zone.fileNumber}', '${zone.destination.replace(/'/g, "\\'")}', '${zone.plot}', '${zone.wikidata}')" class="text-xs bg-white/20 px-3 py-1 rounded hover:bg-white/30">
+                                📄 Ver RDF
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+        }
+
+        function filterByDistrict() {
+            const district = document.getElementById('districtFilter').value;
+            const filtered = district ? rdfData.filter(d => d.distrito === district) : rdfData;
+            displayExplorerResults(filtered);
+        }
+
+        function showRDF(zone, distrito, fileNumber, destination, plot, wikidata) {
+            const rdfCode = `@prefix gz: <http://linkeddata.greenzonesmadrid.org/ontology/gz#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Zona Verde
+<http://linkeddata.greenzonesmadrid.org/resource/${zone}> 
+    a gz:GreenZone ;
+    gz:district "${distrito}" ;
+    gz:fileNumber "${fileNumber}" ;
+    gz:destination "${destination.substring(0, 60)}..." ;
+    gz:plot "${plot} m2" ;
+    gz:inDistrict <http://linkeddata.greenzonesmadrid.org/resource/district/${distrito}> .
+
+# Distrito (entidad enlazada)
+<http://linkeddata.greenzonesmadrid.org/resource/district/${distrito}> 
+    a gz:District ;
+    rdfs:label "${distrito}"@es ;
+    owl:sameAs <https://www.wikidata.org/entity/${wikidata}> .`;
+
+            // Create modal
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50';
+            modal.onclick = function(e) {
+                if (e.target === modal) modal.remove();
+            };
+            modal.innerHTML = `
+                <div class="bg-white rounded-xl p-6 max-w-3xl w-full mx-4 max-h-[80vh] overflow-auto">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">🔍 Código RDF - ${zone}</h3>
+                        <button onclick="this.closest('.fixed').remove()" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+                    </div>
+                    <pre class="bg-gray-900 text-green-400 p-4 rounded-lg overflow-x-auto text-sm font-mono whitespace-pre-wrap">${rdfCode}</pre>
+                    <div class="mt-4 flex gap-3">
+                        <button onclick="navigator.clipboard.writeText(\`${rdfCode.replace(/`/g, '\\`')}\`); alert('¡Copiado al portapapeles!')" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">
+                            📋 Copiar RDF
+                        </button>
+                        <button onclick="this.closest('.fixed').remove()" class="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300">
+                            Cerrar
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(modal);
+        }
+
+        // Search functionality
+        document.getElementById('searchBox').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const filtered = rdfData.filter(d => 
+                d.distrito.toLowerCase().includes(searchTerm) ||
+                d.fileNumber.includes(searchTerm) ||
+                d.destination.toLowerCase().includes(searchTerm)
+            );
+            displayExplorerResults(filtered);
+        });
+
+        // Initialize on load
+        window.addEventListener('load', function() {
+            initExplorer();
+        });
+    </script>
+</body>
+</html>
