@@ -1,116 +1,274 @@
-<html><body><h1>Análisis</h1><h3>Presentes: Distrito, Subepígrafe, Apartado, Número de archivo, Naturaleza del inmueble, Situación Destino, Destino, Solar</h3><h3>Ausentes: </h3><table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th>Distrito</th>
-      <th>Subepígrafe</th>
-      <th>Apartado</th>
-      <th>Número de archivo</th>
-      <th>Naturaleza del inmueble</th>
-      <th>Situación Destino</th>
-      <th>Destino</th>
-      <th>Solar</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300000</td>
-      <td>URBANA</td>
-      <td>CALLE DE BAILEN NUM 15</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO.</td>
-      <td>5025.42 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300001</td>
-      <td>URBANA</td>
-      <td>CALLE DE BAILEN NUM 6</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR. DENTRO DE SU PERÍMETRO SE ENCUENTRA UBICADAUNA CASETA DE GUARDAS.</td>
-      <td>26814.00 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300002</td>
-      <td>URBANA</td>
-      <td>CALLE DEL MESON DE PAREDES, NUM. 37 C/V C/ DE AMPARO NUM 26</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO.</td>
-      <td>2979.20 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300003</td>
-      <td>URBANA</td>
-      <td>CALLE MESON DE PAREDES NUM 68</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO.</td>
-      <td>1637.34 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300004</td>
-      <td>URBANA</td>
-      <td>CALLE DE SEGOVIA NUM 12</td>
-      <td>DOTACIONAL SERVCIOS COLECTIVOS ZONAS VERDES BÁSICO. AFECTADO TOTALMENTE PARA JARDIN PUBLICO. PROYECTODEL BARRIO HISTORICO.</td>
-      <td>172.90 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300005</td>
-      <td>URBANA</td>
-      <td>CALLE DE SEGOVIA, Nº 21-23 Y C/ DE LA MORERÍA, Nº 28</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. AFECTADO TOTALMENTE POR LOS ACCESOS AL VIADUCTO.</td>
-      <td>5462.95 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300006</td>
-      <td>URBANA</td>
-      <td>CALLE DE SEGOVIA, Nº27 C/V CUESTA DE LOS CIEGOS</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. AFECTADA PARA ZONA VERDE. ACCESOS AL VIADUCTO.</td>
-      <td>1001.53 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300007</td>
-      <td>URBANA</td>
-      <td>CALLE DE SEGOVIA C/V CUESTA DE LA VEGA</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. ANTIGUA ALAMEDA DE LA VIRGEN DEL PUERTO YJARDINES DE LA CUESTA DE LA VEGA. DENTRO DE SU PERIMETRO SE ENCUENTRAN UBICADOS UN EVACUATORIO, UNCANTON DE LIMPIEZAS, UNA CASETA DE PERSONAL DE JARDINERÍA Y UNA PISTA POLIVALENTE.</td>
-      <td>106811.18 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300008</td>
-      <td>URBANA</td>
-      <td>CALLE DE SEGOVIA, Nº 31 Y 37 C/V CUESTA DE JAVALQUINTO</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. ACCESOS AL VIADUCTO.</td>
-      <td>1999.63 m2</td>
-    </tr>
-    <tr>
-      <td>CENTRO</td>
-      <td>ZONAS VERDES</td>
-      <td>PARQUES Y JARDINES</td>
-      <td>300009</td>
-      <td>URBANA</td>
-      <td>CALLE DE SEGOVIA NUM 35</td>
-      <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. AFECTADO PARA ZONA VERDE. ACCESOS AL VIADUCTO.</td>
-      <td>1374.79 m2</td>
-    </tr>
-  </tbody>
-</table></body></html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Datasets - Zonas Verdes Madrid</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
+        h1 { color: #2c3e50; }
+        h2 { color: #34495e; margin-top: 30px; }
+        h3 { color: #7f8c8d; }
+        table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+        th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
+        th { background-color: #3498db; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        .license-section { background-color: #ecf0f1; padding: 15px; border-radius: 5px; margin: 20px 0; }
+        .strategy-section { background-color: #e8f5e9; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <h1>Análisis de Datasets - Zonas Verdes de Madrid</h1>
+    
+    <h2>1. Licencias de los Datasets Seleccionados</h2>
+    
+    <div class="license-section">
+        <h3>Dataset Principal: Zonas Verdes de Madrid 2024</h3>
+        <p><strong>Fuente:</strong> Datos Abiertos del Ayuntamiento de Madrid</p>
+        <p><strong>URL:</strong> <a href="https://datos.madrid.es/portal/site/egob/menuitem.c05c1f754a33a9fbe4b2e4b284f1a5a0/?vgnextoid=dc758935dde13410VgnVCM2000000c205a0aRCRD&vgnextchannel=374512b9ace9f310VgnVCM100000171f5a0aRCRD&vgnextfmt=default">Portal de Datos Abiertos Madrid</a></p>
+        <p><strong>Licencia:</strong> Creative Commons Attribution 4.0 (CC BY 4.0)</p>
+        <p><strong>Condiciones de uso:</strong> Los datos pueden ser reutilizados libremente siempre que se cite la fuente: "Ayuntamiento de Madrid - Portal de Datos Abiertos"</p>
+        <p><strong>Última actualización:</strong> 2024</p>
+    </div>
+
+    <div class="license-section">
+        <h3>Dataset Secundario: Wikidata (para enlaces externos)</h3>
+        <p><strong>Fuente:</strong> Wikidata</p>
+        <p><strong>URL:</strong> <a href="https://www.wikidata.org">https://www.wikidata.org</a></p>
+        <p><strong>Licencia:</strong> CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</p>
+        <p><strong>Condiciones de uso:</strong> Los datos son de dominio público y pueden ser utilizados sin restricciones</p>
+        <p><strong>Uso en el proyecto:</strong> Se utilizan URIs de Wikidata para enlazar distritos de Madrid (owl:sameAs)</p>
+    </div>
+
+    <h2>2. Licencia del Dataset a Generar</h2>
+    
+    <div class="license-section">
+        <h3>Dataset RDF Generado: Linked Data de Zonas Verdes de Madrid</h3>
+        <p><strong>Licencia elegida:</strong> Creative Commons Attribution 4.0 International (CC BY 4.0)</p>
+        <p><strong>Justificación:</strong> Se mantiene coherencia con la licencia del dataset original del Ayuntamiento de Madrid, permitiendo máxima reutilización mientras se requiere atribución adecuada.</p>
+        <p><strong>Atribución requerida:</strong> "Basado en datos del Ayuntamiento de Madrid - Transformado a RDF por Group12 - Curso 2025-2026"</p>
+        <p><strong>URI de la licencia:</strong> <a href="https://creativecommons.org/licenses/by/4.0/">https://creativecommons.org/licenses/by/4.0/</a></p>
+        <p><strong>Permisos:</strong></p>
+        <ul>
+            <li>✓ Uso comercial permitido</li>
+            <li>✓ Redistribución permitida</li>
+            <li>✓ Modificación permitida</li>
+            <li>✓ Uso privado permitido</li>
+        </ul>
+        <p><strong>Condiciones:</strong></p>
+        <ul>
+            <li>→ Atribución obligatoria</li>
+            <li>→ Indicar cambios realizados</li>
+        </ul>
+    </div>
+
+    <h2>3. Estrategia de Nombrado de Recursos (Resource Naming Strategy)</h2>
+    
+    <div class="strategy-section">
+        <h3>3.1 Esquema General de URIs</h3>
+        <p><strong>Base URI del proyecto:</strong> <code>http://linkeddata.greenzonesmadrid.org/</code></p>
+        <p><strong>Patrón general:</strong> <code>{base-uri}/{tipo}/{identificador}</code></p>
+
+        <h3>3.2 URIs para la Ontología</h3>
+        <p><strong>Namespace:</strong> <code>http://linkeddata.greenzonesmadrid.org/ontology/gz#</code></p>
+        <p><strong>Prefix:</strong> <code>gz:</code></p>
+        <p><strong>Ejemplos:</strong></p>
+        <ul>
+            <li>Clase GreenZone: <code>gz:GreenZone</code></li>
+            <li>Clase District: <code>gz:District</code></li>
+            <li>Propiedad inDistrict: <code>gz:inDistrict</code></li>
+            <li>Propiedad fileNumber: <code>gz:fileNumber</code></li>
+        </ul>
+
+        <h3>3.3 URIs para Recursos (Instancias)</h3>
+        
+        <h4>Zonas Verdes</h4>
+        <p><strong>Patrón:</strong> <code>http://linkeddata.greenzonesmadrid.org/resource/zone/{id}</code></p>
+        <p><strong>Identificador:</strong> Número secuencial basado en el número de archivo del dataset original</p>
+        <p><strong>Ejemplos:</strong></p>
+        <ul>
+            <li><code>http://linkeddata.greenzonesmadrid.org/resource/zone/1</code></li>
+            <li><code>http://linkeddata.greenzonesmadrid.org/resource/zone/2</code></li>
+            <li><code>http://linkeddata.greenzonesmadrid.org/resource/zone/100</code></li>
+        </ul>
+
+        <h4>Distritos</h4>
+        <p><strong>Patrón:</strong> <code>http://linkeddata.greenzonesmadrid.org/resource/district/{NOMBRE}</code></p>
+        <p><strong>Identificador:</strong> Nombre del distrito en mayúsculas (tal como aparece en el dataset)</p>
+        <p><strong>Ejemplos:</strong></p>
+        <ul>
+            <li><code>http://linkeddata.greenzonesmadrid.org/resource/district/CENTRO</code></li>
+            <li><code>http://linkeddata.greenzonesmadrid.org/resource/district/RETIRO</code></li>
+            <li><code>http://linkeddata.greenzonesmadrid.org/resource/district/CHAMBERI</code></li>
+        </ul>
+
+        <h3>3.4 Principios de Diseño</h3>
+        <ul>
+            <li><strong>Persistencia:</strong> Las URIs están diseñadas para ser permanentes y no cambiar</li>
+            <li><strong>Legibilidad:</strong> Uso de nombres descriptivos en inglés para alcance internacional</li>
+            <li><strong>Jerarquía clara:</strong> Separación entre ontología (/ontology/) y recursos (/resource/)</li>
+            <li><strong>Consistencia:</strong> Uso sistemático de minúsculas en paths, mayúsculas solo en identificadores de distrito</li>
+            <li><strong>Escalabilidad:</strong> IDs numéricos permiten añadir nuevas zonas fácilmente</li>
+            <li><strong>Desreferenciabilidad:</strong> Aunque no implementado, las URIs siguen las mejores prácticas para poder servir información en el futuro</li>
+        </ul>
+
+        <h3>3.5 Enlaces Externos</h3>
+        <p><strong>Estrategia de linking:</strong> Uso de <code>owl:sameAs</code> para conectar con Wikidata</p>
+        <p><strong>Ejemplo:</strong></p>
+        <ul>
+            <li>Distrito CENTRO enlazado a: <code>https://www.wikidata.org/entity/Q1763376</code></li>
+        </ul>
+
+        <h3>3.6 Convenciones de Nombrado de Propiedades</h3>
+        <ul>
+            <li><strong>camelCase:</strong> Para propiedades en inglés (ej: <code>fileNumber</code>, <code>inDistrict</code>)</li>
+            <li><strong>lowercase:</strong> Para términos simples (ej: <code>district</code>, <code>plot</code>)</li>
+            <li><strong>Multilingüismo:</strong> Labels en español e inglés mediante <code>rdfs:label</code></li>
+        </ul>
+    </div>
+
+    <h2>4. Análisis de Atributos del Dataset</h2>
+    
+    <h3>Atributos Presentes en el Dataset:</h3>
+    <ul>
+        <li>Distrito</li>
+        <li>Subepígrafe</li>
+        <li>Apartado</li>
+        <li>Número de archivo</li>
+        <li>Naturaleza del inmueble</li>
+        <li>Situación Destino</li>
+        <li>Destino</li>
+        <li>Solar</li>
+    </ul>
+    
+    <h3>Atributos Ausentes:</h3>
+    <p>No se identificaron atributos ausentes significativos en el dataset original.</p>
+
+    <h2>5. Muestra de Datos</h2>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Distrito</th>
+                <th>Subepígrafe</th>
+                <th>Apartado</th>
+                <th>Número de archivo</th>
+                <th>Naturaleza del inmueble</th>
+                <th>Situación Destino</th>
+                <th>Destino</th>
+                <th>Solar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300000</td>
+                <td>URBANA</td>
+                <td>CALLE DE BAILEN NUM 15</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO.</td>
+                <td>5025.42 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300001</td>
+                <td>URBANA</td>
+                <td>CALLE DE BAILEN NUM 6</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES SINGULAR. DENTRO DE SU PERÍMETRO SE ENCUENTRA UBICADAUNA CASETA DE GUARDAS.</td>
+                <td>26814.00 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300002</td>
+                <td>URBANA</td>
+                <td>CALLE DEL MESON DE PAREDES, NUM. 37 C/V C/ DE AMPARO NUM 26</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO.</td>
+                <td>2979.20 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300003</td>
+                <td>URBANA</td>
+                <td>CALLE MESON DE PAREDES NUM 68</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO.</td>
+                <td>1637.34 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300004</td>
+                <td>URBANA</td>
+                <td>CALLE DE SEGOVIA NUM 12</td>
+                <td>DOTACIONAL SERVCIOS COLECTIVOS ZONAS VERDES BÁSICO. AFECTADO TOTALMENTE PARA JARDIN PUBLICO. PROYECTODEL BARRIO HISTORICO.</td>
+                <td>172.90 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300005</td>
+                <td>URBANA</td>
+                <td>CALLE DE SEGOVIA, Nº 21-23 Y C/ DE LA MORERÍA, Nº 28</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. AFECTADO TOTALMENTE POR LOS ACCESOS AL VIADUCTO.</td>
+                <td>5462.95 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300006</td>
+                <td>URBANA</td>
+                <td>CALLE DE SEGOVIA, Nº27 C/V CUESTA DE LOS CIEGOS</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. AFECTADA PARA ZONA VERDE. ACCESOS AL VIADUCTO.</td>
+                <td>1001.53 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300007</td>
+                <td>URBANA</td>
+                <td>CALLE DE SEGOVIA C/V CUESTA DE LA VEGA</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. ANTIGUA ALAMEDA DE LA VIRGEN DEL PUERTO YJARDINES DE LA CUESTA DE LA VEGA. DENTRO DE SU PERIMETRO SE ENCUENTRAN UBICADOS UN EVACUATORIO, UNCANTON DE LIMPIEZAS, UNA CASETA DE PERSONAL DE JARDINERÍA Y UNA PISTA POLIVALENTE.</td>
+                <td>106811.18 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300008</td>
+                <td>URBANA</td>
+                <td>CALLE DE SEGOVIA, Nº 31 Y 37 C/V CUESTA DE JAVALQUINTO</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. ACCESOS AL VIADUCTO.</td>
+                <td>1999.63 m2</td>
+            </tr>
+            <tr>
+                <td>CENTRO</td>
+                <td>ZONAS VERDES</td>
+                <td>PARQUES Y JARDINES</td>
+                <td>300009</td>
+                <td>URBANA</td>
+                <td>CALLE DE SEGOVIA NUM 35</td>
+                <td>DOTACIONAL SERVICIOS COLECTIVOS ZONAS VERDES BÁSICO. AFECTADO PARA ZONA VERDE. ACCESOS AL VIADUCTO.</td>
+                <td>1374.79 m2</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>6. Notas Adicionales</h2>
+    <ul>
+        <li>El dataset contiene 648 registros de zonas verdes en Madrid</li>
+        <li>Todos los registros pertenecen a la categoría "ZONAS VERDES" y "PARQUES Y JARDINES"</li>
+        <li>La transformación a RDF incluye enlaces a Wikidata para facilitar la integración con otras fuentes de datos</li>
+        <li>Se utiliza una ontología ligera personalizada (gz:) para modelar los datos</li>
+    </ul>
+</body>
+</html>
