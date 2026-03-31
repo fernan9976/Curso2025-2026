@@ -118,3 +118,4 @@ r.validate_task_06_04(g)
 # Save report
 # ----------------------------
 r.save_report("_Task_06")
+
